@@ -1,38 +1,209 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.4;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+a {
+  color: #333;
+  text-decoration: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.vehicles {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  margin: 20px 10px 20px 50px;
 }
 
-.App-link {
-  color: #61dafb;
+.vehicles__tittle {
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+  margin: 10px -40px 30px 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.vehicles__logo__picture {
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+  max-width: 85px;
+  max-height: 60px;
+  margin: 80px -40px 40px -20px;
+}
+
+.vehicles__front {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.vehicles__front__mask {
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+  justify-content: space-between;
+  max-width: 485px;
+  max-height: 500px;
+  margin: 170px -120px 120px -100px;
+}
+
+@media screen and (max-width: 1700px) {
+  .vehicles {
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    max-width: 250px;
+    margin: 20px 160px 50px 125px;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media screen and (max-width: 1700px) {
+  .vehicles__front__mask {
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    max-width: 390px;
+    margin: 30px 170px 190px -180px;
+  }
+}
+
+@media screen and (max-width: 1599px) and (min-width: 1501px) {
+  .vehicles__front__mask {
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    max-width: 368px;
+    max-height: 360px;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .vehicles {
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    margin: 10px 140px 40px 85px;
+    padding-right: 60px;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .vehicles__front__mask {
+    display: flex;
+    justify-content: center;
+    max-width: 400px;
+    margin: 10px 20px 75px -157px;
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  .vehicles {
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    margin: 10px 5px 50px 55px;
+    padding-right: 40px;
+  }
+}
+
+@media screen and (max-width: 1500px) and (min-width: 1399px) {
+  .vehicles {
+    display: flex;
+    justify-content: flex-start;
+    margin: 20px 30px 30px 120px;
+  }
+}
+
+@media screen and (max-width: 1500px) and (min-width: 1399px) {
+  .vehicles__front__mask {
+    display: flex;
+    justify-content: space-around;
+    max-width: 330px;
+  }
+}
+
+@media screen and (max-width: 1399px) and (min-width: 1200px) {
+  .vehicles {
+    display: flex;
+    justify-content: flex-start;
+    margin: 10px 30px 30px 99px;
+  }
+}
+
+@media screen and (max-width: 1399px) and (min-width: 1200px) {
+  .vehicles__front__mask {
+    display: flex;
+    justify-content: space-around;
+    max-width: 300px;
+  }
+}
+
+@media screen and (max-width: 1199px) and (min-width: 999px) {
+  .vehicles {
+    display: flex;
+    justify-content: flex-start;
+    justify-content: space-between;
+    margin: 20px 25px 10px 75px;
+  }
+}
+
+@media screen and (max-width: 1199px) and (min-width: 999px) {
+  .vehicles__front__mask {
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    flex-direction: row;
+    max-width: 250px;
+    max-height: 250px;
+    margin: 200px 60px 320px -105px;
+  }
+}
+
+@media screen and (max-width: 998px) and (min-width: 799px) {
+  .vehicles {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 998px) and (min-width: 799px) {
+  .vehicles__front__mask {
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    flex-direction: row;
+    max-width: 250px;
+    max-height: 250px;
+    margin: 200px 10px 305px -110px;
+  }
+}
+
+@media screen and (max-width: 799px) and (min-width: 700px) {
+  .vehicles__front__mask {
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    flex-direction: row;
+    max-width: 200px;
+    max-height: 200px;
+    margin: 200px 10px 310px -110px;
+  }
+}
+
+@media screen and (max-width: 699px) and (min-width: 610px) {
+  .vehicles__front__mask {
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    flex-direction: row;
+    max-width: 150px;
+    max-height: 150px;
+    margin: 200px 10px 340px -100px;
   }
 }

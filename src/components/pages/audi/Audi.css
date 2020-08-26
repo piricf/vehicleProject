@@ -1,0 +1,87 @@
+.audi__logo {
+  display: flex;
+  max-width: 80px;
+  max-height: 50px;
+  margin: -57px 10px 100px 270px;
+}
+
+.audi__tittle {
+  display: flex;
+  justify-content: flex-start;
+  margin: 40px 10px 20px 140px;
+  cursor: pointer;
+}
+
+.audi__tittle:hover {
+  color: rgb(105, 7, 7);
+  transition: ease-in-out 1s;
+}
+
+.button__info {
+  display: flex;
+  border-radius: 6px;
+  background-color: #333;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 28px;
+  padding: 2px;
+  width: 90px;
+  height: 30px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: -130px 10px 140px 450px;
+  box-shadow: 0 3px #666;
+}
+
+.button__info span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+  padding: 10px 10px 10px 10px;
+  font-size: 10px;
+}
+
+.button__info span:after {
+  content: "\02C5";
+  position: absolute;
+  opacity: 0;
+  top: 1;
+  right: 5px;
+  transition: 1s;
+}
+
+.button__info:hover span {
+  padding-right: 25px;
+}
+
+.button__info:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.audi .audi__info {
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+  max-width: 1000px;
+  color: rgb(41, 36, 36);
+  font-style: oblique;
+  font-family: Trebuchet MS, sans-serif;
+  margin: -80px 10px 40px 129px;
+}
+
+.carousel-container {
+  width: 80%;
+  max-width: 1000px;
+  margin: auto;
+  overflow: hidden;
+  border: 5px solid black;
+}
+
+.carousel-slide {
+  display: flex;
+  width: 100%;
+  height: 500px;
+}

@@ -1,0 +1,59 @@
+.wrapper {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.audia3-color {
+  display: flex;
+  justify-content: flex-start;
+  width: 60%;
+  height: 200px;
+  max-width: 350px;
+  max-height: 200px;
+  margin-left: 175px;
+  margin-bottom: 100px;
+}
+
+.button-color {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  max-width: 230px;
+  margin: -120px 10px 30px 175px;
+  transition: all 1s;
+  cursor: pointer;
+  background-color: #fff;
+
+  border-radius: 6px;
+  padding: 8px;
+  box-shadow: 0px 0px 10px #666;
+}
+
+.button-color:hover {
+  background-color: rgba(75, 70, 70, 0.2);
+  width: 225px;
+}
+
+.button-color::after {
+  content: "\2193";
+  position: relative;
+  left: 10px;
+  bottom: 3px;
+  font-size: 1.4rem;
+}
+
+h3 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  margin-bottom: 50px;
+  margin-top: -64px;
+}
+
+.about {
+  display: flex;
+  justify-content: flex-end;
+  width: 60%;
+  max-width: 350px;
+  margin-bottom: 150px;
+  margin-left: 120px;
+  margin-top: -50px;
+}

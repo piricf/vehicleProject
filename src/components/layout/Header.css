@@ -1,0 +1,22 @@
+.header {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+.link {
+  color: #fff;
+  text-decoration: none;
+  transition: 1s ease-out;
+}
+
+.link:hover {
+  color: rgb(128, 122, 122);
+}
+
+@media screen and (max-width: 700px) {
+  .header {
+    background: grey;
+  }
+}
