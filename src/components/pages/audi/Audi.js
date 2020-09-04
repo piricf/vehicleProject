@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import AudiLogo from "../../../assets/Audi.jpg";
 import AudiModels from "./AudiModels";
 import AudiA3 from "./AudiA3";
-
+import ImageSlider from "./ImageSlider";
 import "./Audi.css";
 
 export class Audi extends Component {
@@ -44,7 +44,9 @@ export class Audi extends Component {
             </div>
           ) : null}
         </div>
-        <div></div>
+        <div>
+          <ImageSlider />
+        </div>
         <div>
           <AudiModels />
         </div>

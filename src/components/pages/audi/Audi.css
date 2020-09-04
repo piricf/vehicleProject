@@ -71,17 +71,3 @@
   font-family: Trebuchet MS, sans-serif;
   margin: -80px 10px 40px 129px;
 }
-
-.carousel-container {
-  width: 80%;
-  max-width: 1000px;
-  margin: auto;
-  overflow: hidden;
-  border: 5px solid black;
-}
-
-.carousel-slide {
-  display: flex;
-  width: 100%;
-  height: 500px;
-}
