@@ -6,6 +6,7 @@ import Audi from "./components/pages/audi/Audi";
 import Bmw from "./components/pages/bmw/Bmw";
 import Mercedes from "./components/pages/mercedes/Mercedes";
 import Home from "./components/pages/HomePage/Home";
+import Footer from "../src/components/pages/Footer/Footer"
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
         <Route path="/bmw" component={Bmw} />
         <Route path="/mercedes" component={Mercedes} />
       </Switch>
+      <Footer />
     </Router>
   );
 };
