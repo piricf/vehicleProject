@@ -12,10 +12,7 @@ const Footer = () => {
       </p>
       <p className="footer-subscription-text">
         Audi, BMW and Mercedes: names we all know, brands we all recognise. UK
-        car buyers can’t get enough of these German cars. And despite sales of
-        all three brands taking a hit in 2018, they have all started to bounce
-        back, proving the British buyers really can’t get enough of these
-        popular brands.
+        car buyers can’t get enough of these German cars. 
       </p>
       <div className="footer-links">
         <div className="footer-link-wrapper">

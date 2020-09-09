@@ -4,6 +4,7 @@ import AudiModels from "./AudiModels";
 import AudiA3 from "./AudiA3";
 import ImageSlider from "./ImageSlider";
 import "./Audi.css";
+import { Button } from "../../Button";
 import i1 from "../../../assets/1.jpg";
 import i2 from "../../../assets/2.jpg";
 import i3 from "../../../assets/3.jpg";
@@ -33,16 +34,22 @@ const Audi = () => {
   };
 
   return (
-    <div className="audi">
-      <h1 className="audi__tittle">Audi</h1>
-      <img src={AudiLogo} alt="AudiLogo" className="audi__logo" />
-      <button className="button__info" onClick={() => toggleInfo()}>
-        <span>About Audi</span>
-      </button>
+    <div className="audi-container">
+      <h1 className="audi-tittle">Audi</h1>
+      <img src={AudiLogo} alt="AudiLogo" className="audi-logo" />
+      <div className="audi__btn-wrapper"> 
+      <Button
+        buttonSize="btn-medium"
+        buttonStyle="btn-outline"
+        onClick={() => toggleInfo()}
+      >
+        <span> About Audi</span>
+      </Button>
+      </div>
       <div className="audi__info">
         {showMe ? (
           <div>
-            <p>
+            <p className="audi__info-text">
               Audi Sport has stood behind the successful motor racing
               involvement of AUDI AG for 40 years.Nowadays, the Ingolstadt
               manufacturer markets its most sporty Audi models and accessories

@@ -1,73 +1,55 @@
-.audi__logo {
+.audi-tittle {
   display: flex;
+  justify-content: start;
+  margin-left: 64px;
+  margin-top: 40px;
+}
+
+.audi-logo {
+  display: flex;
+  justify-content: start;
   max-width: 80px;
   max-height: 50px;
-  margin: -57px 10px 100px 270px;
-}
-
-.audi__tittle {
-  display: flex;
-  justify-content: flex-start;
-  margin: 40px 10px 20px 140px;
-  cursor: pointer;
-}
-
-.audi__tittle:hover {
-  color: rgb(105, 7, 7);
-  transition: ease-in-out 1s;
-}
-
-.button__info {
-  display: flex;
-  border-radius: 6px;
-  background-color: #333;
-  border: none;
-  color: #ffffff;
-  text-align: center;
-  font-size: 28px;
-  padding: 2px;
-  width: 90px;
-  height: 30px;
-  transition: all 0.5s;
-  cursor: pointer;
-  margin: -130px 10px 140px 450px;
-  box-shadow: 0 3px #666;
-}
-
-.button__info span {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.5s;
-  padding: 10px 10px 10px 10px;
-  font-size: 10px;
-}
-
-.button__info span:after {
-  content: "\02C5";
+  margin-left: 156px;
   position: absolute;
-  opacity: 0;
-  top: 1;
-  right: 5px;
-  transition: 1s;
+  top: 130px;
 }
 
-.button__info:hover span {
-  padding-right: 25px;
+.audi__btn-wrapper {
+  display: flex;
+  justify-content: start;
+  margin-left: 64px;
+  position: absolute;
+  top: 122px;
+  right: 120px;
 }
 
-.button__info:hover span:after {
-  opacity: 1;
-  right: 0;
-}
-
-.audi .audi__info {
+.audi__info {
   display: flex;
   justify-content: center;
-  font-size: 14px;
-  max-width: 1000px;
-  color: rgb(41, 36, 36);
-  font-style: oblique;
-  font-family: Trebuchet MS, sans-serif;
-  margin: -80px 10px 40px 129px;
+}
+
+.audi__info-text {
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+  margin-top: 46px;
+  padding-right: 25px;
+  padding-left: 25px;
+  max-width: 100%;
+  flex-basis: 50%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+@media screen and (max-width: 991px) {
+  .container {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+  .audi__btn-wrapper {
+    position: static;
+    margin-top: 25px;
+  }
 }

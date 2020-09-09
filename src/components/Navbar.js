@@ -66,7 +66,7 @@ const Navbar = () => {
             <li className="nav-btn">
               {button ? (
                 <Link to="/sign-up" className="btn-link">
-                  <Button buttonStyle="btn--outline" buttonSize="btn-mobile">
+                  <Button buttonStyle="btn-outline" buttonSize="btn-medium">
                     SIGN UP
                   </Button>
                 </Link>
