@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Spec from "./Spec";
 import "./AudiModels.css";
 
-export default function AudiModels() {
+export const AudiModels = () => {
   const [specs, setSpecs] = useState([
     {
       about: "Audi A3 Sportback 2020",
@@ -42,9 +42,11 @@ export default function AudiModels() {
     <div className="audi__models">
       <div className="specs">
         {specs.map((spec, i) => (
-          <Spec spec={spec} index={i} toggleSpec={toggleSpec} />
+          <Spec spec={spec} key={i} index={i} toggleSpec={toggleSpec} />
         ))}
       </div>
     </div>
   );
-}
+};
+
+export default AudiModels;

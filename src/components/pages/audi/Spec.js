@@ -1,6 +1,6 @@
 import React from "react";
 
-function Spec({ spec, index, toggleSpec }) {
+export const Spec = ({ spec, index, toggleSpec }) => {
   return (
     <div
       className={"spec " + (spec.open ? "open" : "")}
@@ -11,6 +11,6 @@ function Spec({ spec, index, toggleSpec }) {
       <div className="spec-specifications">{spec.specifications}</div>
     </div>
   );
-}
+};
 
 export default Spec;
