@@ -37,11 +37,13 @@
   .audi__models {
     margin-left: 65px;
   }
+ 
 }
 
 .specs {
   width: 100%;
   max-width: 768px;
+  min-width: 350px;
   margin: 0 auto;
   padding: 45px;
 }
@@ -59,7 +61,6 @@
   font-size: 20px;
   padding-right: 80px;
   cursor: pointer;
-
   transition: all 0.4s ease;
 }
 
@@ -76,7 +77,6 @@
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
-
   transform: all 0.4s ease-out;
 }
 
