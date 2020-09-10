@@ -42,6 +42,7 @@
   .audi__img {
     height: 280px;
     width: 550px;
+    border-radius: 8px;
   }
   
   img {
