@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import AudiLogo from "../../../assets/Audi.jpg";
 import AudiModels from "./AudiModels";
-import AudiA3 from "./AudiA3";
+import AudiA3 from "./AudiA3/AudiA3";
 import ImageSlider from "./ImageSlider";
 import "./Audi.css";
 import { Button } from "../../Button";
@@ -11,6 +11,8 @@ import i3 from "../../../assets/3.jpg";
 import i4 from "../../../assets/4.jpg";
 import Cars from "./Cars";
 import useSlider from "../../../hooks/useSlider";
+import AudiA5 from "./AudiA5/AudiA5";
+import AudiA6 from "./AudiA6/AudiA6";
 
 let sliderArr = [
   <Cars src={i1} />,
@@ -22,6 +24,8 @@ let sliderArr = [
 const Audi = () => {
   const [showMe, setShowMe] = useState(false);
   const [open, setOpen] = useState(true);
+  const [change, setChange] = useState(true);
+  const [changeColor, setChangeColor] = useState(true);
 
   const [x, goLeft, goRight] = useSlider(sliderArr);
 
@@ -29,9 +33,18 @@ const Audi = () => {
     setShowMe(!showMe);
   };
 
-  const toggleImage = () => {
+  const toogleImage = () => {
     setOpen(!open);
   };
+
+  const toogleImageA5 = () => {
+    setChange(!change)
+  }
+
+  const toogleImageA6 = () => {
+    setChangeColor(!changeColor)
+  }
+
 
   return (
     <div className="audi-container">
@@ -78,7 +91,13 @@ const Audi = () => {
         <AudiModels />
       </div>
       <div>
-        <AudiA3 toggleImage={toggleImage} open={open} />
+        <AudiA3 toggleImage={toogleImage} open={open} />
+      </div>
+      <div>
+        <AudiA5  toggleImageA5={toogleImageA5} change={change} />
+      </div> 
+      <div>
+        <AudiA6 toggleImageA6={toogleImageA6} changeColor={changeColor} />
       </div>
     </div>
   );

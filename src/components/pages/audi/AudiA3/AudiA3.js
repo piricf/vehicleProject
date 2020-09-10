@@ -1,6 +1,6 @@
 import React from "react";
 import "./AudiA3.css";
-import Button from "../../Button";
+import Button from "../../../Button";
 
 const imagesPath = {
   red:
