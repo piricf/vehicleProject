@@ -9,6 +9,7 @@ import i4 from "./Images/4.jpg";
 import Cars from "./Cars";
 import useSlider from "../../../hooks/useSlider";
 import ImageSliderBmw from "./ImageSliderBmw";
+import BmwModels from "./BmwModels";
 
 let sliderArr = [
   <Cars src={i1} />,
@@ -62,6 +63,9 @@ const Bmw = () => {
           x={x}
           sliderArr={sliderArr}
         />
+      </div>
+      <div>
+        <BmwModels />
       </div>
     </div>
   );

@@ -1,12 +1,10 @@
-.audi__models {
+.bmw__models {
   display: flex;
   align-items: flex-start;
   margin: -55px 245px 120px 10px;
 }
 
-
-
-.specs {
+.cons {
   width: 100%;
   max-width: 768px;
   min-width: 350px;
@@ -14,7 +12,7 @@
   padding: 45px;
 }
 
-.specs .spec {
+.cons .con {
   margin: 25px;
   padding: 15px;
   background-color: #fff;
@@ -22,7 +20,7 @@
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 
-.specs .spec .spec-about {
+.cons .con .con-info {
   position: relative;
   font-size: 20px;
   padding-right: 80px;
@@ -30,7 +28,7 @@
   transition: all 0.4s ease;
 }
 
-.specs .spec .spec-about::after {
+.cons .con .con-info::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -39,65 +37,60 @@
   width: 30px;
   height: 30px;
 
-  background-image: url("./arrow-down.svg");
-  background-position: center;
+  background-image: url("../audi/arrow-down.svg");
+  position: center;
   background-size: contain;
   background-repeat: no-repeat;
   transform: all 0.4s ease-out;
 }
 
-.specs .spec .spec-specifications {
+.cons .con .con-conditions {
   opacity: 0;
   max-height: 0;
   overflow-y: hidden;
   transition: all 0.4 ease-out;
 }
 
-.specs .spec.open .spec-about {
+.cons .con.show .con-info {
   margin-bottom: 15px;
 }
 
-.specs .spec.open .spec-about::after {
+.cons .con.show .con-info::after {
   transform: translateY(-50%) rotate(180deg);
 }
 
-.specs .spec.open .spec-specifications {
-  max-height: 1000px;
+.cons .con.show .con-conditions {
+  max-height: 100px;
   opacity: 1;
 }
 
 @media screen and (max-width: 1100px) and (min-width: 1001px) {
-  .audi__models {
+  .bmw__models {
     margin-left: 65px;
   }
 }
-
 @media screen and (max-width: 1000px) and (min-width: 901px) {
-  .audi__models {
+  .bmw__models {
     margin-left: 65px;
   }
 }
-
 @media screen and (max-width: 900px) and (min-width: 801px) {
-  .audi__models {
+  .bmw__models {
     margin-left: 65px;
   }
 }
-
 @media screen and (max-width: 800px) and (min-width: 701px) {
-  .audi__models {
+  .bmw__models {
     margin-left: 65px;
   }
 }
 @media screen and (max-width: 700px) and (min-width: 601px) {
-  .audi__models {
+  .bmw__models {
     margin-left: 65px;
   }
 }
-
 @media screen and (max-width: 600px) and (min-width: 501px) {
-  .audi__models {
+  .bmw__models {
     margin-left: 65px;
   }
- 
 }
