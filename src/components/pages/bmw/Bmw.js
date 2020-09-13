@@ -10,6 +10,9 @@ import Cars from "./Cars";
 import useSlider from "../../../hooks/useSlider";
 import ImageSliderBmw from "./ImageSliderBmw";
 import BmwModels from "./BmwModels";
+import Bmw3 from "./Bmw3/Bmw3";
+import Bmw5 from "./Bmw5/Bmw5";
+import Bmw7 from "./Bmw7/Bmw7";
 
 let sliderArr = [
   <Cars src={i1} />,
@@ -20,12 +23,27 @@ let sliderArr = [
 
 const Bmw = () => {
   const [showMe, setShowMe] = useState(false);
-
   const [x, goLeft, goRight] = useSlider(sliderArr);
+
+  const [changeBmw3, setChangeBmw3] = useState(true)
+  const [changeBmw5, setChangeBmw5] = useState(true)
+  const [changeBmw7, setChangeBmw7] = useState(true)
 
   const toogleInfo = () => {
     setShowMe(!showMe);
   };
+
+  const toogleImageBmw3 = () => {
+    setChangeBmw3(!changeBmw3)
+  }
+
+  const toogleImageBmw5 = () => {
+    setChangeBmw5(!changeBmw5)
+  }
+
+  const toogleImageBmw7 = () => {
+    setChangeBmw7(!changeBmw7)
+  }
 
   return (
     <div className="bmw-container">
@@ -66,6 +84,15 @@ const Bmw = () => {
       </div>
       <div>
         <BmwModels />
+      </div>
+      <div>
+        <Bmw3 toogleImageBmw3={toogleImageBmw3} changeBmw3={changeBmw3} />
+      </div>
+      <div>
+        <Bmw5 toogleImageBmw5={toogleImageBmw5} changeBmw5={changeBmw5} />
+      </div>
+      <div>
+        <Bmw7 toogleImageBmw7={toogleImageBmw7} changeBmw7={changeBmw7} />
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-.audi__a3-row {
+.bmw3__series3-row {
   align-items: center;
 }
 
@@ -21,13 +21,13 @@
   flex-basis: 50%;
 }
 
-.audi__a3-text-wrapper {
+.bmw3__series3-text-wrapper {
   max-width: 540px;
   padding-top: 0;
   padding-bottom: 60px;
 }
 
-.audi__a3-text-info {
+.bmw3__series3-text-info {
   box-sizing: border-box;
   padding-bottom: 5px;
   padding-top: 15px;
@@ -35,33 +35,34 @@
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-.audi__a3-img-wrapper {
-  max-width: 555px;
+.bmw3__series3-img-wrapper {
+    max-width: 555px;
 }
 
-.audi__img {
-  height: 280px;
-  width: 550px;
-  border-radius: 8px;
+.bmw3__img {
+    height: 280px;
+    width: 550px;
+    border-radius: 8px;
 }
 
 img {
-  border: 0;
-  max-width: 100%;
-  vertical-align: 100%;
-  display: inline-block;
+    border: 0;
+    max-width: 100%;
+    vertical-align: 100%;
+    display: inline-block;
 }
 
 @media screen and (max-width: 991px) {
-  .container {
-    padding-right: 30px;
-    padding-left: 30px;
+    .container {
+      padding-right: 30px;
+      padding-left: 30px;
+    }
+    .column {
+      max-width: 100%;
+      flex-basis: 100%;
+    }
+    .bmw3__img {
+      margin: -105px 0 0 0;
+    }
   }
-  .column {
-    max-width: 100%;
-    flex-basis: 100%;
-  }
-  .audi__img {
-    margin: -105px 0 0 0;
-  }
-}
+  
