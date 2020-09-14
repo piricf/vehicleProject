@@ -9,7 +9,7 @@ const imagesPath = {
     "https://www.autocar.co.uk/sites/autocar.co.uk/files/1-audi-a3-sportback-tdi-2020-fd-hero-front.jpg",
 };
 
-export const AudiA3 = ({ toggleImage, open }) => {
+export const AudiA3 = ({ toggleImageA3, changeA3 }) => {
   const { red, blue } = imagesPath;
 
   return (
@@ -27,14 +27,14 @@ export const AudiA3 = ({ toggleImage, open }) => {
             statement: a statement for the future.
           </p>
           </div>
-        <Button onClick={toggleImage} buttonSize="btn-medium"  >
+        <Button onClick={toggleImageA3} buttonSize="btn-medium"  >
           Click to change color of Audi A3
         </Button>
         
         </div>
         <div className="column"> 
         <div className="audi__a3-img-wrapper"> 
-        <img src={open ? red : blue} className="audi__img" alt="ImageName" />  
+        <img src={changeA3 ? red : blue} className="audi__img" alt="ImageName" />  
         </div>
         </div>
       </div>

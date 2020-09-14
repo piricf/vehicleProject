@@ -8,7 +8,7 @@ const imagesPath = {
   grey: "https://images.hgmsites.net/hug/audi-a6_100726069_h.jpg",
 };
 
-const AudiA6 = ({ toggleImageA6, changeColor }) => {
+const AudiA6 = ({ toggleImageA6, changeA6 }) => {
   const { white, grey } = imagesPath;
 
   return (
@@ -34,7 +34,7 @@ const AudiA6 = ({ toggleImageA6, changeColor }) => {
         <div className="column">
           <div className="audi__a6-img-wrapper">
             <img
-              src={changeColor ? white : grey}
+              src={changeA6 ? white : grey}
               className="audi__img"
               alt="ImageName"
             />

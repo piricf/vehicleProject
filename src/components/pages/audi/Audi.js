@@ -23,9 +23,9 @@ let sliderArr = [
 
 const Audi = () => {
   const [showMe, setShowMe] = useState(false);
-  const [open, setOpen] = useState(true);
-  const [change, setChange] = useState(true);
-  const [changeColor, setChangeColor] = useState(true);
+  const [changeA3, setChangeA3] = useState(true);
+  const [changeA5, setChangeA5] = useState(true);
+  const [changeA6, setChangeA6] = useState(true);
 
   const [x, goLeft, goRight] = useSlider(sliderArr);
 
@@ -33,16 +33,16 @@ const Audi = () => {
     setShowMe(!showMe);
   };
 
-  const toogleImage = () => {
-    setOpen(!open);
+  const toogleImageA3 = () => {
+    setChangeA3(!changeA3);
   };
 
   const toogleImageA5 = () => {
-    setChange(!change)
+    setChangeA5(!changeA5)
   }
 
   const toogleImageA6 = () => {
-    setChangeColor(!changeColor)
+    setChangeA6(!changeA6)
   }
 
 
@@ -91,13 +91,13 @@ const Audi = () => {
         <AudiModels />
       </div>
       <div>
-        <AudiA3 toggleImage={toogleImage} open={open} />
+        <AudiA3 toggleImageA3={toogleImageA3} changeA3={changeA3} />
       </div>
       <div>
-        <AudiA5  toggleImageA5={toogleImageA5} change={change} />
+        <AudiA5  toggleImageA5={toogleImageA5} changeA5={changeA5} />
       </div> 
       <div>
-        <AudiA6 toggleImageA6={toogleImageA6} changeColor={changeColor} />
+        <AudiA6 toggleImageA6={toogleImageA6} changeA6={changeA6} />
       </div>
     </div>
   );

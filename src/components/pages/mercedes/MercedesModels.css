@@ -1,0 +1,96 @@
+.mercedes__models {
+  display: flex;
+  align-items: flex-start;
+  margin: -55px 245px 120px 10px;
+}
+
+.stats {
+  width: 100%;
+  max-width: 768px;
+  min-width: 350px;
+  margin: 0 auto;
+  padding: 45px;
+}
+
+.stats .stat {
+  margin: 25px;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.stats .stat .stat-info {
+  position: relative;
+  font-size: 20px;
+  padding-right: 80px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.stats .stat .stat-info::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0px;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+
+  background-image: url("../audi/arrow-down.svg");
+  position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: all 0.4s ease-out;
+}
+
+.stats .stat .stat-statements {
+  opacity: 0;
+  max-height: 0;
+  overflow-y: hidden;
+  transition: all 0.4 ease-out;
+}
+
+.stats .stat.show .stat-info {
+  margin-bottom: 15px;
+}
+
+.stats .stat.show .stat-info::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.stats .stat.show .stat-statements {
+  max-height: 100px;
+  opacity: 1;
+}
+
+@media screen and (max-width: 1100px) and (min-width: 1001px) {
+  .mercedes__models {
+    margin-left: 65px;
+  }
+}
+@media screen and (max-width: 1000px) and (min-width: 901px) {
+  .mercedes__models {
+    margin-left: 65px;
+  }
+}
+@media screen and (max-width: 900px) and (min-width: 801px) {
+  .mercedes__models {
+    margin-left: 65px;
+  }
+}
+@media screen and (max-width: 800px) and (min-width: 701px) {
+  .mercedes__models {
+    margin-left: 65px;
+  }
+}
+@media screen and (max-width: 700px) and (min-width: 601px) {
+  .mercedes__models {
+    margin-left: 65px;
+  }
+}
+@media screen and (max-width: 600px) and (min-width: 501px) {
+  .mercedes__models {
+    margin-left: 65px;
+  }
+}

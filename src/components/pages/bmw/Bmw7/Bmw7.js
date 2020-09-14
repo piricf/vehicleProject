@@ -28,7 +28,7 @@ const Bmw7 = ({ toogleImageBmw7, changeBmw7 }) => {
             </p>
           </div>
           <Button onClick={toogleImageBmw7} buttonSize="btn-medium">
-            Click to change color of BMW7
+            Click to change color of BMW 7
           </Button>
         </div>
         <div className="column">

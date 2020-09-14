@@ -9,7 +9,7 @@ const imagesPath = {
     "https://carsguide-res.cloudinary.com/image/upload/f_auto,fl_lossy,q_auto,t_cg_hero_large/v1/editorial/2020-Audi-A5-1001x565%20%281%29.jpg",
 };
 
-const AudiA5 = ({ toggleImageA5, change }) => {
+const AudiA5 = ({ toggleImageA5, changeA5 }) => {
   const { green, metalic } = imagesPath;
 
   return (
@@ -33,7 +33,7 @@ const AudiA5 = ({ toggleImageA5, change }) => {
         <div className="column">
           <div className="audi__a5-img-wrapper">
             <img
-              src={change ? green : metalic}
+              src={changeA5 ? green : metalic}
               className="audi__img"
               alt="ImageName"
             />
