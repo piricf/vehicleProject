@@ -12,7 +12,7 @@ const Footer = () => {
       </p>
       <p className="footer-subscription-text">
         Audi, BMW and Mercedes: names we all know, brands we all recognise. UK
-        car buyers can’t get enough of these German cars. 
+        car buyers can’t get enough of these German cars.
       </p>
       <div className="footer-links">
         <div className="footer-link-wrapper">
@@ -24,8 +24,8 @@ const Footer = () => {
           </div>
           <div className="footer-link-items">
             <h2>Contact us</h2>
-            <Link to="/">Contact</Link>
-            <Link to="/">Support</Link>
+            <Link to="/sign-in">Sign in</Link>
+            <Link to="/sign-in">Support</Link>
             <Link to="/sign-up">How it works</Link>
           </div>
           <div className="footer-link-items">

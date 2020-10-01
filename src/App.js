@@ -6,20 +6,32 @@ import Audi from "./components/pages/audi/Audi";
 import Bmw from "./components/pages/bmw/Bmw";
 import Mercedes from "./components/pages/mercedes/Mercedes";
 import Home from "./components/pages/HomePage/Home";
-import Footer from "../src/components/pages/Footer/Footer"
+import Footer from "../src/components/pages/Footer/Footer";
+import { Provider } from "react-redux";
+
+import store from "./redux/Store";
+import Nav from "./components/Nav";
+import SignUp from "./components/auth/SignUp";
+import LogIn from "./components/auth/LogIn";
+
 
 const App = () => {
   return (
-    <Router>
-      <Navbar />
-      <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/audi" component={Audi} />
-        <Route path="/bmw" component={Bmw} />
-        <Route path="/mercedes" component={Mercedes} />
-      </Switch>
-      <Footer />
-    </Router>
+    <Provider store={store}>
+      <Router>
+        <Navbar />
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/audi" component={Audi} />
+          <Route path="/bmw" component={Bmw} />
+          <Route path="/mercedes" component={Mercedes} />
+          <Route path="/sign-in" component={SignUp}  />
+          <Route path="/log-in" component={LogIn} />
+          <Nav />
+        </Switch>
+        <Footer />
+      </Router>
+    </Provider>
   );
 };
 

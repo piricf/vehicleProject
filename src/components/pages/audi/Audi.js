@@ -23,11 +23,11 @@ let sliderArr = [
 
 const Audi = () => {
   const [showMe, setShowMe] = useState(false);
+  const [x, goLeft, goRight] = useSlider(sliderArr);
+  
   const [changeA3, setChangeA3] = useState(true);
   const [changeA5, setChangeA5] = useState(true);
   const [changeA6, setChangeA6] = useState(true);
-
-  const [x, goLeft, goRight] = useSlider(sliderArr);
 
   const toggleInfo = () => {
     setShowMe(!showMe);
