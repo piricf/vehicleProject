@@ -1,12 +1,11 @@
-import firebase from "../../firebase/Config"
-
+import firebase from "../../firebase/Config";
 
 export const logoutUser = () => {
-    return async function(dispatch) {
-        await firebase.logout()
-        dispatch({type: "LOGOUT_USER", payload: {}})
-        dispatch({type: "CREATE_USER", payload: {}})
-    }
-}
+  return async function (dispatch) {
+    await firebase.logout();
+    dispatch({ type: "LOGIN_USER", payload: {} });
+    dispatch({ type: "CREATE_USER", payload: {} });
+  };
+};
 
-export default logoutUser
+

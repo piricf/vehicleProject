@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Redirect } from "react-router-dom";
-//action
 import { logInUser } from "../../redux/actions/LogInAction";
+import Button from "../Button";
 
 const LogIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-  const [routeRedirect, setRedirect] = useState(false);
+  const [redirect, setRedirect] = useState(false);
   const dispatch = useDispatch();
   const logInUserAction = (email, password) => {
     dispatch(logInUser(email, password));
@@ -17,18 +16,18 @@ const LogIn = () => {
   const loginHandler = async (e) => {
     e.preventDefault();
     if (email !== "" && password !== "") {
-      let user = await logInUserAction(email, password);
-      console.log(user);
-      if (user) {
-        setRedirect(true);
-      } else {
-        console.log("something went wrong");
-      }
+      console.log("login user in");
+      await logInUserAction(email, password);
+      setRedirect(true);
+      alert("you are logged in");
+    } else {
+      console.log("need to fill the credentials");
+      alert("Something went wrong");
     }
   };
 
-  const rediretTo = routeRedirect;
-  if (rediretTo) {
+  const redirectTo = redirect;
+  if (redirectTo) {
     return <Redirect to="/" />;
   }
 
@@ -52,10 +51,10 @@ const LogIn = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        <button type="submit" value="Login">
+        <Button type="submit" value="Login">
           {" "}
           Log In
-        </button>
+        </Button>
       </form>
     </>
   );

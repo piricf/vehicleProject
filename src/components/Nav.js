@@ -1,30 +1,31 @@
-import React, { useEffect, useState } from "react";
-import {useSelector, useDispatch } from "react-redux";
+import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { Link, withRouter } from "react-router-dom";
 import firebase from "../firebase/Config";
-import {logoutUser} from "../redux/actions/LogoutAction";
-
+import { logoutUser } from "../redux/actions/LogoutAction";
+import Button from "./Button";
+import "./Nav.css";
 
 const Nav = (props) => {
   const signInSelector = useSelector((state) => state.signIn);
   const logInSelector = useSelector((state) => state.logIn);
   const [userState, setUserState] = useState(null);
-
   const dispatch = useDispatch();
   const logoutUserAction = () => dispatch(logoutUser());
 
+  
   useEffect(() => {
-    firebase.getUserState().then((user) => {
-      setUserState(user);
+    firebase.getUserState().then(user => {
+     setUserState(user);
     });
-  });
+  })
 
-  const logout = async () => {
+  const logout = async() => {
     console.log("logout user");
     setUserState(null);
     await logoutUserAction();
-    props.history.replace("/");
-  };
+    props.history.replace("/")
+  }
 
   let buttons;
   if (
@@ -34,40 +35,48 @@ const Nav = (props) => {
   ) {
     buttons = (
       <>
-        <li>
-          <button className="logout" onClick={logout}>
+        <div>
+          <Button className="logout" onClick={logout}>
             Log Out
-          </button>
-        </li>
+          </Button>
+        </div>
       </>
     );
   } else {
     buttons = (
-      <>
-        <li>
-          <Link to="/sign-in"  className="nav-link">
-            Sign In
+      <div className="nav-container">
+        <div className="navigation-item">
+          <Link to="/sign-in" className="navigation-link">
+            <Button buttonSize="btn-medium" buttonStyle="btn-outline">
+              Sign Up
+            </Button>
           </Link>{" "}
-        </li>
-        <li>
+        </div>
+        <div className="navigation-item">
           {" "}
-          <Link to="/log-in"  className="nav-link">
-            Log In
+          <Link to="/log-in" className="navigation-link">
+            <Button buttonSize="btn-medium" buttonStyle="btn-outline">
+              Log In
+            </Button>
           </Link>
-        </li>
-      </>
+        </div>
+      </div>
     );
   }
 
   return (
-    <nav>
-      <ul>
-        <li>
-          <Link to="/"> Get started </Link>
-        </li>
-      </ul>
+    <div className="navigation-container">
+      <div>
+        <Link to="/" className="navigation__header-link">
+          <Button buttonSize="btn-medium" buttonStyle="btn-outline">
+            {" "}
+            Get started{" "}
+          </Button>{" "}
+        </Link>
+      </div>
+
       {buttons}
-    </nav>
+    </div>
   );
 };
 

@@ -1,0 +1,22 @@
+.navigation-container {
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
+  margin-top: 106px;
+  margin-left: 106px;
+  margin-right: 106px;
+  margin-bottom: 106px;
+
+ 
+ 
+}
+
+.navigation-item {
+  position: relative;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
+  margin-top: 76px;
+  margin-bottom: 76px;
+
+}

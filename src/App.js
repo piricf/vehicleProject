@@ -9,7 +9,7 @@ import Home from "./components/pages/HomePage/Home";
 import Footer from "../src/components/pages/Footer/Footer";
 import { Provider } from "react-redux";
 
-import store from "./redux/Store";
+import Store from "./redux/Store";
 import Nav from "./components/Nav";
 import SignUp from "./components/auth/SignUp";
 import LogIn from "./components/auth/LogIn";
@@ -17,7 +17,7 @@ import LogIn from "./components/auth/LogIn";
 
 const App = () => {
   return (
-    <Provider store={store}>
+    <Provider store={Store}>
       <Router>
         <Navbar />
         <Switch>

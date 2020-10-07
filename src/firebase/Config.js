@@ -1,4 +1,3 @@
-//import { configure } from "@testing-library/react";
 import firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
@@ -41,24 +40,24 @@ class Firebase {
       .catch((err) => {
         console.log(err);
       });
+    console.log(user);
     return user;
   }
 
+  //log-out
+  async logout() {
+    const logout = await firebase
+      .auth()
+      .signOut()
+      .catch((err) => console.log(err));
+    return logout;
+  }
 
-
-    //log-out
-    async logout() {
-      const logout = await firebase.auth().signOut().catch(err => {
-        console.log(err)
-      })
-      return logout;
-    }
-
-    async getUserState() {
-      return new Promise(resolve => {
-        this.auth.onAuthStateChanged(resolve)
-      })
-    }
+  async getUserState() {
+    return new Promise((resolve) => {
+      this.auth.onAuthStateChanged(resolve);
+    });
+  }
 }
 
 export default new Firebase();
