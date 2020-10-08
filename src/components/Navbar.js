@@ -7,6 +7,7 @@ import "./Button.css";
 import "./Navbar.css";
 
 const Navbar = () => {
+  //TODO: promijeni naming da se lakse snalazim
   const [click, setClick] = useState(false);
 
   const [button, setButton] = useState(true);
@@ -63,6 +64,7 @@ const Navbar = () => {
                 Mercedes
               </Link>
             </li>
+            {/* probaj na jednostavniji nacin */}
             <li className="nav-btn"> 
               {button ? (
                 <Link to="/sign-up" className="btn-link">

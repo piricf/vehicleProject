@@ -7,17 +7,13 @@ import Bmw from "./components/pages/bmw/Bmw";
 import Mercedes from "./components/pages/mercedes/Mercedes";
 import Home from "./components/pages/HomePage/Home";
 import Footer from "../src/components/pages/Footer/Footer";
-import { Provider } from "react-redux";
-
-import Store from "./redux/Store";
-import Nav from "./components/Nav";
-import SignUp from "./components/auth/SignUp";
-import LogIn from "./components/auth/LogIn";
-
+// import { Provider } from "react-redux";
+// import store from "./redux/store";
+import Form from "./components/pages/auth/Form";
 
 const App = () => {
   return (
-    <Provider store={Store}>
+    // <Provider store={store}>
       <Router>
         <Navbar />
         <Switch>
@@ -25,13 +21,11 @@ const App = () => {
           <Route path="/audi" component={Audi} />
           <Route path="/bmw" component={Bmw} />
           <Route path="/mercedes" component={Mercedes} />
-          <Route path="/sign-in" component={SignUp}  />
-          <Route path="/log-in" component={LogIn} />
-          <Nav />
+          <Route path="/sign-up" component={Form} />
         </Switch>
         <Footer />
       </Router>
-    </Provider>
+    // </Provider>
   );
 };
 
