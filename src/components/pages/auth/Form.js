@@ -1,29 +1,50 @@
-import React, { useState } from "react";
-import "./Form.css";
-import FormSuccess from "./FormSuccess";
-import FormSignUp from "./FormSignUp";
+// import React, { useEffect, useState } from "react"
+// // import React, { useState } from "react";
+// //  import { Redirect } from "react-router-dom";
+// import firebase from "../../../firebase/Config"
+// // // import "./Form.css";
+// // import FormLogin from "./FormLogin";
+// // import FormSignUp from "./FormSignUp";
 
-const Form = () => {
-  const [isSubmitted, setIsSubmitted] = useState(false);
+// const Form = () => {
+//   // const [isSubmitted, setIsSubmitted] = useState(false);
+//   // const submitForm = () => {
+//   //   setIsSubmitted(true);
+//   // };
 
-  function submitForm() {
-    setIsSubmitted(true);
-  }
-  return (
-    <>
-      <div className="form-container">
-        {/* <span className="close-btn">×</span> */}
-        <div className="form-content-left">
-          <img className="form-img" src="https://acad.xlri.ac.in/evening/images/login.svg" alt="login-img" />
-        </div>
-        {!isSubmitted ? (
-          <FormSignUp submitForm={submitForm} />
-        ) : (
-          <FormSuccess />
-        )}
-      </div>
-    </>
-  );
-};
 
-export default Form;
+//   useEffect(() => {
+//     firebase.getUserState()
+//     .then((user) => {
+//       setUserState(user)
+//     })
+//   })
+
+  
+  
+ 
+
+//   return (
+//     <>
+//       <div className="form-container">
+//         <div className="form-content-left">
+//           <img
+//             className="form-img"
+//             src="https://acad.xlri.ac.in/evening/images/login.svg"
+//             alt="login-img"
+//           />
+//         </div>
+//         {/* <FormSignUp /> */}
+//         {/* {!isSubmitted ? (
+//           <FormSignUp submitForm={submitForm} />
+//         ) : (
+//         <FormLogin />
+//         )} */}
+        
+//       </div>
+      
+//     </>
+//   );
+// };
+
+// export default Form;
