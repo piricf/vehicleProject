@@ -42,8 +42,7 @@ const Navbar = () => {
   ) {
     navButtons = (
       <Button
-        buttonStyle="btn-outline"
-        buttonColor="red"
+        // buttonStyle="btn-outline"
         buttonSize="btn-medium"
         onClick={logout}
       >
@@ -51,10 +50,15 @@ const Navbar = () => {
       </Button>
     );
   } else {
-    navButtons = <Link to="/sign-up">Sign Up</Link>;
+    navButtons = (
+      <Link to="/sign-up">
+        <Button buttonSize="btn-medium" buttonStyle="btn-outline">Sign Up</Button>
+      </Link>
+    );
   }
 
-  const handleClick = () => {
+  const handleClick = (e) => {
+    e.preventDefault();
     setClick(!click);
   };
 
@@ -108,15 +112,16 @@ const Navbar = () => {
             </li>
             {/* probaj na jednostavniji nacin */}
             <li className="nav-btn">
-              {button ? (
+              {/* {button ? (
                 <Link to="/sign-up" className="btn-link">
                   <Button
-                    buttonStyle="btn-outline"
-                    buttonColor="red"
-                    buttonSize="btn-medium"
+                  buttonStyle="btn-outline"
+                  buttonColor="red"
+                  buttonSize="btn-medium"
                   >
                     {navButtons}
                   </Button>
+                  
                 </Link>
               ) : (
                 <Link
@@ -124,9 +129,26 @@ const Navbar = () => {
                   className="btn-link"
                   onClick={closeMobileMenu}
                 >
-                  <Button buttonStyle="btn-outline">{navButtons}</Button>
+                  <Button
+                  // buttonStyle="btn-outline"
+                  >
+                    {navButtons}
+                  </Button>
                 </Link>
-              )}
+              )} */}
+              <Link
+                to="/sign-up"
+                className="btn-link"
+                onClick={closeMobileMenu}
+              >
+                {/* <Button
+                  // buttonStyle="btn-outline"
+                  >
+                    {navButtons}
+                  </Button> */}
+                  {button}
+                {navButtons}
+              </Link>
             </li>
           </ul>
         </div>
