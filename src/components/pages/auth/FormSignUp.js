@@ -22,7 +22,7 @@ const FormSignUp = () => {
   const createUserAction = (email, password) =>
     dispatch(createUser(email, password));
 
-  const handleSubmit = async (e) => {
+  const handleSignUpSubmit = async (e) => {
     e.preventDefault();
     if (
       username !== "" &&
@@ -55,7 +55,7 @@ const FormSignUp = () => {
         />
       </div>
       <div className="form-content-right">
-        <form onSubmit={handleSubmit} className="form">
+        <form onSubmit={handleSignUpSubmit} className="form">
           <h1>
             Get started with us today! Create your account by filling out the
             information below.

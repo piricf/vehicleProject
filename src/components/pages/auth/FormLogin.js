@@ -22,14 +22,15 @@ const FormLogin = () => {
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
     if (email !== "" && password !== "") {
-      console.log("login user in");
       //nece redirectat kada radim na ovaj nacin
       // let user = await loginUserAction(email, password);
       // if (user) {
       //   setRedirect(true);
       // }
-      await loginUserAction(email,password)
-      setRedirect(true)
+
+      await loginUserAction(email, password);
+      console.log("login user in");
+      setRedirect(true);
     } else {
       console.log("need to fill the credentials");
       setErrors(validate(values));

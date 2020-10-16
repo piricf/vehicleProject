@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { AiOutlineCar } from "react-icons/ai";
 import { Button } from "./Button";
@@ -14,32 +14,29 @@ const Navbar = () => {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
 
-  const [userState, setUserState] = useState(null);
-  const signinSelector = useSelector((state) => state.signin);
-  const loginSelector = useSelector((state) => state.login);
+  // const [userState, setUserState] = useState(null);
+  // const signinSelector = useSelector((state) => state.signin);
+  // const loginSelector = useSelector((state) => state.login);
+  const authState = useSelector((state) => state.authReducer);
   const dispatch = useDispatch();
-  const logoutUserAction = () => dispatch(logoutUser());
 
   useEffect(() => {
-    firebase.getUserState().then((user) => {
-      setUserState(user);
-    });
-  });
+    console.log("Initial state: ", authState);
+    // firebase.getUserState().then((user) => {
+    //   setUserState(user);
+    // });
+  }, [authState]);
 
-  const logout = async () => {
+  const logout = () => {
+    dispatch(logoutUser());
     console.log("Logout User");
-    alert("User is logged out");
-    setUserState(null);
-    await logoutUserAction();
+    // alert("User is logged out");
+    // setUserState(null);
     //props.history.replace("/")
   };
 
   let navButtons;
-  if (
-    (signinSelector.user && signinSelector.user.hasOwnProperty("user")) ||
-    (loginSelector.user && loginSelector.user.hasOwnProperty("user")) ||
-    userState != null
-  ) {
+  if (authState.user) {
     navButtons = (
       <Button
         // buttonStyle="btn-outline"
@@ -52,7 +49,9 @@ const Navbar = () => {
   } else {
     navButtons = (
       <Link to="/sign-up">
-        <Button buttonSize="btn-medium" buttonStyle="btn-outline">Sign Up</Button>
+        <Button buttonSize="btn-medium" buttonStyle="btn-outline">
+          Sign Up
+        </Button>
       </Link>
     );
   }
@@ -146,7 +145,7 @@ const Navbar = () => {
                   >
                     {navButtons}
                   </Button> */}
-                  {button}
+                {button}
                 {navButtons}
               </Link>
             </li>
@@ -157,4 +156,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default withRouter(Navbar);

@@ -27,7 +27,7 @@ class Firebase {
       .createUserWithEmailAndPassword(email, password)
       .catch((err) => {
         console.log(err);
-        alert("Something failed");
+        alert("Sign Up Failed");
       });
     return user;
   }
@@ -39,7 +39,7 @@ class Firebase {
       alert("You are now logged in")
       .catch((err) => {
         console.log(err);
-        alert("Email or Password are wrong or both of them");
+        alert("Login Failed")
       });
     return user;
   }
