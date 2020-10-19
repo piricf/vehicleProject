@@ -1,4 +1,4 @@
-import firebase from "../firebase/Config";
+import firebase from "../../firebase/Config";
 
 export const createUser = (email, password) => {
   return function (dispatch) {
@@ -39,6 +39,7 @@ export const logoutUser = () => {
   };
 };
 
+//-----------------------------------------------------------------------------------
 // export const createUser = async (email, password) => {
 //   return async function (dispatch) {
 //     try {

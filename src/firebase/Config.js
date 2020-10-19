@@ -32,17 +32,31 @@ class Firebase {
     return user;
   }
 
+
   async login(email, password) {
-    const user = await firebase
-      .auth()
-      .signInWithEmailAndPassword(email, password)
-      alert("You are now logged in")
-      .catch((err) => {
-        console.log(err);
-        alert("Login Failed")
-      });
-    return user;
+    try{
+      const user = await firebase
+      if(!user){
+        throw new Error(`HTTP error! status: ${user.status}`)
+    } else {
+      firebase.auth().signInWithEmailAndPassword(email, password)
+    }
+  } catch(err) {
+    console.log(err)
   }
+}
+
+  // async login(email, password) {
+  //   const user =  await firebase
+  //     .auth()
+  //     .signInWithEmailAndPassword(email, password)
+  //      alert("You are now logged in")
+  //     .catch((err) => {
+  //       console.log(err);
+  //       alert("Login Failed")
+  //     });
+  //   return user;
+  // }
 
   async logout() {
     const logout = await firebase

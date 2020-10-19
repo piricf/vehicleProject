@@ -6,7 +6,7 @@ import { Button } from "./Button";
 import "./Button.css";
 import "./Navbar.css";
 import { useDispatch, useSelector } from "react-redux";
-import { logoutUser } from "../redux/userActions";
+import { logoutUser } from "../redux/authentication/userActions";
 import firebase from "../firebase/Config";
 
 const Navbar = () => {
@@ -14,29 +14,37 @@ const Navbar = () => {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
 
-  // const [userState, setUserState] = useState(null);
+  const [userState, setUserState] = useState(null);
   // const signinSelector = useSelector((state) => state.signin);
   // const loginSelector = useSelector((state) => state.login);
   const authState = useSelector((state) => state.authReducer);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    console.log("Initial state: ", authState);
-    // firebase.getUserState().then((user) => {
-    //   setUserState(user);
-    // });
-  }, [authState]);
+  // useEffect(() => {
+  //   console.log("Initial state: ", authState);
+  //   //  firebase.getUserState().then((user) => {
+  //   //   setUserState(user);
+  //   // });
+  // }, [authState]);
+
+  useEffect(() => { 
+    console.log("Initial State: ", authState)
+    firebase.getUserState()
+    .then((user) => {
+      setUserState(user)
+    })
+  }, [authState])
 
   const logout = () => {
     dispatch(logoutUser());
     console.log("Logout User");
     // alert("User is logged out");
-    // setUserState(null);
     //props.history.replace("/")
   };
 
   let navButtons;
-  if (authState.user) {
+   if ((authState.user && authState.user.hasOwnProperty("user")) || userState != null)  {
+   // if((signinSelector.user && signinSelector.user.hasOwnProperty("user")) || (loginSelector.user && loginSelector.user.hasOwnProperty("user")) || userState != null) { 
     navButtons = (
       <Button
         // buttonStyle="btn-outline"

@@ -3,7 +3,7 @@ import validate from "./validateInfo";
 import "./Form.css";
 import { Link, Redirect } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { createUser } from "../../../redux/userActions";
+import { createUser } from "../../../redux/authentication/userActions";
 
 const FormSignUp = () => {
   const [values, setValues] = useState({

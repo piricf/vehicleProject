@@ -3,7 +3,7 @@ import validate from "./validateInfo";
 import "./Form.css";
 import { useDispatch } from "react-redux";
 import { Redirect } from "react-router-dom";
-import { loginUser } from "../../../redux/userActions";
+import { loginUser } from "../../../redux/authentication/userActions";
 
 const FormLogin = () => {
   const [values, setValues] = useState({
@@ -18,6 +18,9 @@ const FormLogin = () => {
   const dispatch = useDispatch();
   const loginUserAction = (email, password) =>
     dispatch(loginUser(email, password));
+
+  
+
 
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
