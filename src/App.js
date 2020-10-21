@@ -12,6 +12,7 @@ import store from "./redux/store";
 import FormSignUp from "./components/pages/auth/FormSignUp";
 import FormLogin from "./components/pages/auth/FormLogin";
 
+
 const App = () => {
   return (
     <Provider store={store}>

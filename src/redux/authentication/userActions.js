@@ -1,5 +1,6 @@
 import firebase from "../../firebase/Config";
 
+
 export const createUser = (email, password) => {
   return function (dispatch) {
     dispatch({ type: "LOADING" });
@@ -14,21 +15,40 @@ export const createUser = (email, password) => {
   };
 };
 
+
 export const loginUser = (email, password) => {
-  return function (dispatch) {
-    dispatch({ type: "LOADING" });
-    return firebase
-      .login(email, password)
-      .then((user) => {
-        // if (!user) {
-        //   dispatch({ type: "ERROR", payload: "Failed getting user" });
-        //   return;
-        // }
-        dispatch({ type: "LOGIN_USER", payload: user });
-      })
-      .catch((err) => dispatch({ type: "ERROR", payload: err }));
-  };
-};
+  return dispatch => {
+    dispatch(request({email}))
+    firebase.login(email, password)
+    .then(
+      user => {
+        dispatch(success(user))
+      },
+      error => {
+        dispatch(failure(error.toString()))
+      }
+    )
+  }
+  function request(user) { return { type: "LOGIN_USER", payload: user}}
+  function success(user) { return {type: "LOGIN_SUCCESS", payload: user}}
+  function failure(error) { return { type: "LOGIN_FAILURE", payload: error}}
+}
+
+// export const loginUser = (email, password) => {
+//   return function (dispatch) {
+//     dispatch({ type: "LOADING" });
+//     return firebase
+//       .login(email, password)
+//       .then((user) => {
+//         // if (!user) {
+//         //   dispatch({ type: "ERROR", payload: "Failed getting user" });
+//         //   return;
+//         // }
+//         dispatch({ type: "LOGIN_USER", payload: user });
+//       })
+//       .catch((err) => dispatch({ type: "ERROR", payload: err }));
+//   };
+// };
 
 export const logoutUser = () => {
   return function (dispatch) {
@@ -38,6 +58,18 @@ export const logoutUser = () => {
       .catch((err) => dispatch({ type: "ERROR", payload: "Logout Error" }));
   };
 };
+
+export const showLoader = () =>{ 
+  return function(dispatch) {
+    dispatch({type: "SHOW_LOADER"})
+  }
+}
+
+export const hideLoader = () => {
+  return function(dispatch) {
+    dispatch({type: "HIDE_LOADER"})
+  }
+}
 
 //-----------------------------------------------------------------------------------
 // export const createUser = async (email, password) => {
