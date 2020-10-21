@@ -2,6 +2,7 @@ import React from "react";
 import { Button } from "./Button";
 import { Link } from "react-router-dom";
 import "./HeroSection.css";
+import { useSelector } from "react-redux";
 
 const HeroSection = ({
   lightBg,
@@ -14,6 +15,8 @@ const HeroSection = ({
   img,
   alt,
 }) => {
+  const user = useSelector((state) => state.authReducer.user)
+
   return (
     <>
       <div
@@ -37,9 +40,10 @@ const HeroSection = ({
                   {description}
                 </p>
                 <Link to="/sign-up">
-                  <Button buttonSize="btn-wide" buttonColor="blue">
+                  {user ? null : <Button buttonSize="btn-wide" buttonColor="blue">
                     {buttonLabel}
-                  </Button>
+                  </Button>}
+                  
                 </Link>
               </div>
             </div>

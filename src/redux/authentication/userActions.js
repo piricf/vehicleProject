@@ -1,75 +1,49 @@
-import firebase from "../../firebase/Config";
-
-
-export const createUser = (email, password) => {
-  return function (dispatch) {
-    dispatch({ type: "LOADING" });
-    return firebase
-      .signin(email, password)
-      .then((user) => {
-        if (!user) {
-          return dispatch({ type: "CREATE_USER", payload: user });
-        }
-      })
-      .catch((err) => dispatch({ type: "ERROR", payload: "Sign Up Error" }));
-  };
-};
+import firebase from "firebase/app";
 
 
 export const loginUser = (email, password) => {
-  return dispatch => {
-    dispatch(request({email}))
-    firebase.login(email, password)
-    .then(
-      user => {
-        dispatch(success(user))
-      },
-      error => {
-        dispatch(failure(error.toString()))
-      }
-    )
-  }
-  function request(user) { return { type: "LOGIN_USER", payload: user}}
-  function success(user) { return {type: "LOGIN_SUCCESS", payload: user}}
-  function failure(error) { return { type: "LOGIN_FAILURE", payload: error}}
-}
-
-// export const loginUser = (email, password) => {
-//   return function (dispatch) {
-//     dispatch({ type: "LOADING" });
-//     return firebase
-//       .login(email, password)
-//       .then((user) => {
-//         // if (!user) {
-//         //   dispatch({ type: "ERROR", payload: "Failed getting user" });
-//         //   return;
-//         // }
-//         dispatch({ type: "LOGIN_USER", payload: user });
-//       })
-//       .catch((err) => dispatch({ type: "ERROR", payload: err }));
-//   };
-// };
-
-export const logoutUser = () => {
-  return function (dispatch) {
+  return (dispatch) => {
+    dispatch({ type: "LOADING" });
     firebase
-      .logout()
-      .then(() => dispatch({ type: "LOGOUT_USER" }))
-      .catch((err) => dispatch({ type: "ERROR", payload: "Logout Error" }));
+      .auth()
+      .signInWithEmailAndPassword(email, password)
+      .then((user) => dispatch({ type: "LOGIN_SUCCESS", payload: user }))
+      .catch((error) => dispatch({ type: "ERROR", payload: error.message }));
   };
 };
 
-export const showLoader = () =>{ 
-  return function(dispatch) {
-    dispatch({type: "SHOW_LOADER"})
-  }
-}
+export const logoutUser = () => {
+  return (dispatch) => {
+    firebase
+      .logOut()
+      .then(() => dispatch({ type: "LOGOUT_USER" }))
+      .catch((error) => dispatch({ type: "ERROR", payload: error.message }));
+  };
+};
 
-export const hideLoader = () => {
-  return function(dispatch) {
-    dispatch({type: "HIDE_LOADER"})
-  }
-}
+
+export const createUser = (email, password) => {
+    return function (dispatch) {
+      dispatch({ type: "LOADING" });
+      return firebase
+        .signin(email, password)
+        .then((user) => {
+          if (!user) {
+            return dispatch({ type: "CREATE_USER", payload: user });
+          }
+        })
+        .catch((err) => dispatch({ type: "ERROR", payload: "Sign Up Error" }));
+    };
+  };
+
+// export const logoutUser = () => {
+// return function (dispatch) {
+//   firebase
+//     .logout()
+//     .then(() => dispatch({ type: "LOGOUT_USER" }))
+//     .catch((err) => dispatch({ type: "ERROR", payload: "Logout Error" }));
+// };
+// };
 
 //-----------------------------------------------------------------------------------
 // export const createUser = async (email, password) => {
