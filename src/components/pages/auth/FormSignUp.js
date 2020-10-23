@@ -1,49 +1,59 @@
-import React, { useState } from "react";
+import React, {  useState, useEffect } from "react";
 import validate from "./validateInfo";
 import "./Form.css";
-import { Link, Redirect } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { Link, useHistory} from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import { createUser } from "../../../redux/authentication/userActions";
+import { SpinningCircles } from "svg-loaders-react";
 
 const FormSignUp = () => {
+  const dispatch = useDispatch();
   const [values, setValues] = useState({
     username: "",
     email: "",
     password: "",
     password2: "",
   });
+
+  const error = useSelector((state) => state.authReducer.error);
+  const loading = useSelector((state) => state.authReducer.loading);
+  const user = useSelector((state) => state.authReducer.user);
+  
+
+  const history = useHistory();
+
+  const handleSignUpChange = (e) => {
+    const { name, value } = e.target;
+    setValues({
+      ...values,
+      [name]: value,
+    });
+  };
+
   const [errors, setErrors] = useState({});
-  const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [password2, setPassword2] = useState("");
-  const [routeRedirect, setRedirect] = useState("");
-  const dispatch = useDispatch();
-  const createUserAction = (email, password) =>
-    dispatch(createUser(email, password));
 
   const handleSignUpSubmit = async (e) => {
     e.preventDefault();
     if (
-      username !== "" &&
-      email !== "" &&
-      password !== "" &&
-      password2 !== "" &&
-      password2 === password
+      values.username !== "" &&
+      values.password2 !== "" &&
+      values.password2 === values.password
     ) {
-      console.log("creating user");
-      await createUserAction(email, password);
-      setRedirect(true);
+      dispatch(createUser(values.email, values.password));
     } else {
-      console.log("need to fill the credentials");
       setErrors(validate(values));
     }
   };
 
-  const redirectTo = routeRedirect;
-  if (redirectTo) {
-    return <Redirect to="/log-in" />;
-  }
+  useEffect(() => {
+    if (user) {
+      history.push("/log-in");
+    }
+  }, [user]);
+
+  useEffect(() => {
+    console.log(error);
+  }, [error]);
 
   return (
     <div className="form-container">
@@ -67,8 +77,8 @@ const FormSignUp = () => {
               type="text"
               name="username"
               placeholder="Enter your username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              value={values.username}
+              onChange={handleSignUpChange}
             />
             {errors.username && <p>{errors.username}</p>}
           </div>
@@ -79,8 +89,8 @@ const FormSignUp = () => {
               type="email"
               name="email"
               placeholder="Enter your email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              value={values.email}
+              onChange={handleSignUpChange}
             />
             {errors.email && <p>{errors.email}</p>}
           </div>
@@ -91,8 +101,8 @@ const FormSignUp = () => {
               type="password"
               name="password"
               placeholder="Enter your password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              value={values.password}
+              onChange={handleSignUpChange}
             />
             {errors.password && <p>{errors.password}</p>}
           </div>
@@ -103,11 +113,13 @@ const FormSignUp = () => {
               type="password"
               name="password2"
               placeholder="Confirm your password"
-              value={password2}
-              onChange={(e) => setPassword2(e.target.value)}
+              value={values.password2}
+              onChange={handleSignUpChange}
             />
-            {errors.password2 && <p>{errors.password2}</p>}
+            {errors.password && <p>{errors.password}</p>}
+            
           </div>
+          {error ? <p className="error">{error}</p> : null}
           <button className="form-input-btn" type="submit">
             Sign up
           </button>
@@ -117,6 +129,11 @@ const FormSignUp = () => {
               <span>here</span>
             </Link>
           </span>
+          {loading ? (
+            <p className="laoding">
+              <SpinningCircles />
+            </p>
+          ) : null}
         </form>
       </div>
     </div>

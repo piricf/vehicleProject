@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { AiOutlineCar } from "react-icons/ai";
 import { Button } from "./Button";
@@ -8,59 +8,25 @@ import "./Navbar.css";
 import { useDispatch, useSelector } from "react-redux";
 import { logoutUser } from "../redux/authentication/userActions";
 
-
 const Navbar = () => {
   const dispatch = useDispatch();
-  
+
   const [click, setClick] = useState(false);
-  
   const [button, setButton] = useState(true);
 
-  // const [userState, setUserState] = useState(null);
-  // const authState = useSelector((state) => state.authReducer);
-  
+  const user = useSelector((state) => state.authReducer.user);
+  const history = useHistory()
 
-  const user = useSelector((state) => state.authReducer.user)
-
-  
-  // useEffect(() => {
-  //   console.log("Initial state: ", authState);
-  //   //  firebase.getUserState().then((user) => {
-  //   //   setUserState(user);
-  //   // });
-  // }, [authState]);
   const logout = () => {
-    dispatch(logoutUser())
-  }
+    dispatch(logoutUser());
+  };
 
-  // const logout = () => {
-  //   dispatch(logoutUser());
-  //   console.log("Logout User");
-  //    alert("User is logged out");
-  //   props.history.replace("/")
-  // };
+  useEffect(() => {
+    if(!user){
+      history.push("/sign-up")
+    }
+  },[user])
 
-  // let navButtons;
-  //  if ((authState.user && authState.user.hasOwnProperty("user")) || userState != null)  {
-  //  // if((signinSelector.user && signinSelector.user.hasOwnProperty("user")) || (loginSelector.user && loginSelector.user.hasOwnProperty("user")) || userState != null) { 
-  //   navButtons = (
-  //     <Button
-  //       // buttonStyle="btn-outline"
-  //       buttonSize="btn-medium"
-  //       onClick={logout}
-  //     >
-  //       Log Out
-  //     </Button>
-  //   );
-  // } else {
-  //   navButtons = (
-  //     <Link to="/sign-up">
-  //       <Button buttonSize="btn-medium" buttonStyle="btn-outline">
-  //         Sign Up
-  //       </Button>
-  //     </Link>
-  //   );
-  // }
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -117,59 +83,21 @@ const Navbar = () => {
             </li>
             <li className="nav-btn">
               <Link to="/sign-up" className="btn-link">
-                {user ? 
-                <Button
-                  buttonStyle="btn-outline"
-                  buttonSize="btn-medium"
-                  onClick={logout}
+                {user ? (
+                  <Button
+                    buttonStyle="btn-outline"
+                    buttonSize="btn-medium"
+                    onClick={logout}
                   >
                     Log Out
-                  </Button> : <Button
-                  buttonStyle="btn-outline"
-                  buttonSize="btn-medium"
-                  >
-                    Sign Up
-                  </Button>}
-                  {button}
-              </Link>
-
-              {/* {button ? (
-                <Link to="/sign-up" className="btn-link">
-                  <Button
-                  buttonStyle="btn-outline"
-                  buttonSize="btn-medium"
-                  >
+                  </Button>
+                ) : (
+                  <Button buttonStyle="btn-outline" buttonSize="btn-medium">
                     Sign Up
                   </Button>
-                  
-                </Link>
-              ) : (
-                <Link
-                  to="/sign-up"
-                  className="btn-link"
-                  onClick={closeMobileMenu}
-                >
-                  <Button
-                  buttonStyle="btn-outline"
-                  >
-                    Sign Up
-                  </Button>
-                  {button}
-                </Link>
-              )} */}
-              
-              {/* <Link
-                to="/sign-up"
-                className="btn-link"
-                onClick={closeMobileMenu}
-              >
-                <Button
-                  // buttonStyle="btn-outline"
-                  >
-                    {navButtons}
-                  </Button>
+                )}
                 {button}
-              </Link> */}
+              </Link>
             </li>
           </ul>
         </div>

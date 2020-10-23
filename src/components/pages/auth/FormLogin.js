@@ -3,6 +3,7 @@ import "./Form.css";
 import { useDispatch, useSelector } from "react-redux";
 import { loginUser } from "../../../redux/authentication/userActions";
 import { useHistory } from "react-router-dom";
+import { SpinningCircles  } from 'svg-loaders-react'
 
 const FormLogin = () => {
   const dispatch = useDispatch();
@@ -20,7 +21,7 @@ const FormLogin = () => {
 
   useEffect(() => {
     if (user) {
-      history.push("/");
+    history.push("/");
     }
   }, [user]);
 
@@ -36,43 +37,14 @@ const FormLogin = () => {
     e.preventDefault();
     dispatch(loginUser(values.email, values.password));
   };
+  
 
-  // const handleLoginSubmit = async (e) => {
-  //   e.preventDefault();
-  //   if (email !== "" && password !== "") {
-  //     //nece redirectat kada radim na ovaj nacin
-  //     // let user = await loginUserAction(email, password);
-  //     // if (user) {
-  //     //   setRedirect(true);
-  //     // }
-
-  //     await loginUserAction(email, password);
-  //     console.log("login user in");
-  //     setRedirect(true);
-  //   } else {
-  //     console.log("need to fill the credentials");
-  //     setErrors(validate(values));
-  //   }
-  // };
-
-  // const logout = () => {
-  //   // dispatch(logoutUser());
-  //   // console.log("Logout User");
-  //   // alert("User is logged out");
-  //   //props.history.replace("/")
-  // };
-
-  // const [userState, setUserState] = useState(null);
-  // const authState = useSelector((state) => state.authReducer);
 
   useEffect(() => {
     console.log(error);
   }, [error]);
 
-  // const redirectTo = routeRedirect;
-  // if (redirectTo) {
-  //   return <Redirect to="/" />;
-  // }
+ 
 
   return (
     <div className="form-container">
@@ -112,7 +84,7 @@ const FormLogin = () => {
           <button className="form-input-btn" type="submit">
             Log In
           </button>
-          {loading ? <p className="loading">LOADING</p> : null}
+          {loading ? <p className="loading"><SpinningCircles  /></p> : null}
         </form>
       </div>
     </div>
