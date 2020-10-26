@@ -8,15 +8,18 @@ import Mercedes from "./components/pages/mercedes/Mercedes";
 import Home from "./components/pages/HomePage/Home";
 import Footer from "../src/components/pages/Footer/Footer";
 import { Provider } from "react-redux";
-import store from "./redux/store";
+import {store, persistor} from "./redux/store";
 import FormSignUp from "./components/pages/auth/FormSignUp";
 import FormLogin from "./components/pages/auth/FormLogin";
+import {PersistGate} from "redux-persist/integration/react" 
+
 
 
 const App = () => {
   return (
     <Provider store={store}>
       <Router>
+        <PersistGate persistor={persistor} > 
         <Navbar />
         <Switch>
           <Route path="/" exact component={Home} />
@@ -27,6 +30,7 @@ const App = () => {
           <Route path="/log-in" component={FormLogin} />
         </Switch>
         <Footer />
+        </PersistGate>
       </Router>
     </Provider>
   );

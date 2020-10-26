@@ -10,7 +10,7 @@ import { logoutUser } from "../redux/authentication/userActions";
 
 const Navbar = () => {
   const dispatch = useDispatch();
-
+  
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
 

@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import "./HeroSection.css";
 import { useSelector } from "react-redux";
 
+
+
 const HeroSection = ({
   lightBg,
   topLine,

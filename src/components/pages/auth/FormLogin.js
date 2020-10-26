@@ -19,6 +19,7 @@ const FormLogin = () => {
   const loading = useSelector((state) => state.authReducer.loading);
   const user = useSelector((state) => state.authReducer.user);
 
+
   useEffect(() => {
     if (user) {
     history.push("/");
@@ -37,13 +38,12 @@ const FormLogin = () => {
     e.preventDefault();
     dispatch(loginUser(values.email, values.password));
   };
-  
-
 
   useEffect(() => {
     console.log(error);
   }, [error]);
 
+ 
  
 
   return (
@@ -56,7 +56,7 @@ const FormLogin = () => {
         />
       </div>
       <div className="form-content-right">
-        <form onSubmit={handleLoginSubmit} className="form" noValidate>
+        <form onSubmit={handleLoginSubmit} className="form" noValidate >
           <h1>Welcome back!</h1>
           <div className="form-inputs">
             <label className="form-label">Email</label>

@@ -1,4 +1,4 @@
-// import  firebase from "firebase/app";
+// import * as firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
 import "firebase/storage";
@@ -14,7 +14,6 @@ export const firebaseConfig = {
   appId: "1:422603042964:web:dc23e2dbe3b4f330d48481",
   measurementId: "G-E6GXR3EWR6",
 };
-
 
 
 
