@@ -1,13 +1,13 @@
 .audi-tittle {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   margin-left: 64px;
   margin-top: 40px;
 }
 
 .audi-logo {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   max-width: 80px;
   max-height: 50px;
   margin-left: 156px;
@@ -17,7 +17,7 @@
 
 .audi__btn-wrapper {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   margin-left: 64px;
   position: absolute;
   top: 122px;

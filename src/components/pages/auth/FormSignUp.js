@@ -1,7 +1,7 @@
-import React, {  useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import validate from "./validateInfo";
 import "./Form.css";
-import { Link, useHistory} from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { createUser } from "../../../redux/authentication/userActions";
 import { SpinningCircles } from "svg-loaders-react";
@@ -15,10 +15,10 @@ const FormSignUp = () => {
     password2: "",
   });
 
-  const error = useSelector((state) => state.authReducer.error);
-  const loading = useSelector((state) => state.authReducer.loading);
-  const user = useSelector((state) => state.authReducer.user);
-  
+  // const error = useSelector((state) => state.authReducer.error);
+  // const loading = useSelector((state) => state.authReducer.loading);
+  // const user = useSelector((state) => state.authReducer.user);
+  const { error, loading, user } = useSelector((state) => state.authReducer);
 
   const history = useHistory();
 
@@ -49,7 +49,7 @@ const FormSignUp = () => {
     if (user) {
       history.push("/log-in");
     }
-  }, [user]);
+  }, [user, history]);
 
   useEffect(() => {
     console.log(error);
@@ -117,7 +117,6 @@ const FormSignUp = () => {
               onChange={handleSignUpChange}
             />
             {errors.password && <p>{errors.password}</p>}
-            
           </div>
           {error ? <p className="error">{error}</p> : null}
           <button className="form-input-btn" type="submit">

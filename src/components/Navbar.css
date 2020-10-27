@@ -27,7 +27,7 @@
 
 .navbar-logo {
   color: #fff;
-  justify-self: start;
+  justify-self: flex-start;
   cursor: pointer;
   text-decoration: none;
   font-size: 2rem;
@@ -50,7 +50,7 @@
   justify-content: center;
   list-style: none;
   text-align: center;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .nav-item {

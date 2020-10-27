@@ -25,7 +25,7 @@ const Navbar = () => {
     if(!user){
       history.push("/sign-up")
     }
-  },[user])
+  },[user, history])
 
 
   const handleClick = (e) => {
@@ -43,7 +43,7 @@ const Navbar = () => {
     }
   };
 
-  window.addEventListener("resize", showButton); //resize-aj buttone(makni ih kad se smanjuje ekran)
+  window.addEventListener("resize", showButton); 
 
   return (
     <>

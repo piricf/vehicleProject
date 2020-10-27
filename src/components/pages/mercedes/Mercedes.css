@@ -1,13 +1,13 @@
 .mercedes-title {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   margin-left: 64px;
   margin-top: 40px;
 }
 
 .mercedes-logo {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   max-width: 80px;
   max-height: 50px;
   margin-left: 226px;
@@ -17,7 +17,7 @@
 
 .mercedes__btn-wrapper {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   margin-left: 64px;
   position: absolute;
   top: 122px;

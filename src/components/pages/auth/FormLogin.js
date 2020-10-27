@@ -24,7 +24,7 @@ const FormLogin = () => {
     if (user) {
     history.push("/");
     }
-  }, [user]);
+  }, [user, history]);
 
   const handleLoginChange = (e) => {
     const { name, value } = e.target;
