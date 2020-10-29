@@ -25,6 +25,7 @@ export const authReducer = (state = INITIAL_STATE, action) => {
         ...state,
         user: action.payload,
         loading: false,
+        error: undefined,
       };
 
     case "LOGOUT_USER":

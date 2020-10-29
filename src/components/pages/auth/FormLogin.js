@@ -15,9 +15,7 @@ const FormLogin = () => {
 
   const history = useHistory();
 
-  const error = useSelector((state) => state.authReducer.error);
-  const loading = useSelector((state) => state.authReducer.loading);
-  const user = useSelector((state) => state.authReducer.user);
+  const {user, loading, error} = useSelector((state) => state.authReducer)
 
 
   useEffect(() => {

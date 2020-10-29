@@ -10,23 +10,22 @@ import { logoutUser } from "../redux/authentication/userActions";
 
 const Navbar = () => {
   const dispatch = useDispatch();
-  
+
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
 
   const user = useSelector((state) => state.authReducer.user);
-  const history = useHistory()
+  const history = useHistory();
 
   const logout = () => {
     dispatch(logoutUser());
   };
 
   useEffect(() => {
-    if(!user){
-      history.push("/sign-up")
+    if (!user) {
+      history.push("/sign-up");
     }
-  },[user, history])
-
+  }, [user, history]);
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -43,7 +42,12 @@ const Navbar = () => {
     }
   };
 
-  window.addEventListener("resize", showButton); 
+  const logoutAndCloseMobileMenu = () => {
+    logout()
+    closeMobileMenu()
+  }
+
+  window.addEventListener("resize", showButton);
 
   return (
     <>
@@ -57,6 +61,13 @@ const Navbar = () => {
             {click ? <FaTimes /> : <FaBars />}
           </div>
           <ul className={click ? "nav-menu active" : "nav-menu"}>
+            {user ? 
+            <li className="nav-item">
+              <Link to="/posts" className="nav-links" onClick={closeMobileMenu}>
+                Posts
+              </Link>
+            </li>
+             : null }
             <li className="nav-item">
               <Link to="/" className="nav-links" onClick={closeMobileMenu}>
                 Home
@@ -87,12 +98,12 @@ const Navbar = () => {
                   <Button
                     buttonStyle="btn-outline"
                     buttonSize="btn-medium"
-                    onClick={logout}
+                    onClick={logoutAndCloseMobileMenu}
                   >
                     Log Out
                   </Button>
                 ) : (
-                  <Button buttonStyle="btn-outline" buttonSize="btn-medium">
+                  <Button buttonStyle="btn-outline" buttonSize="btn-medium" onClick={closeMobileMenu}>
                     Sign Up
                   </Button>
                 )}

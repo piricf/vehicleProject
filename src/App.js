@@ -12,6 +12,8 @@ import {store, persistor} from "./redux/store";
 import FormSignUp from "./components/pages/auth/FormSignUp";
 import FormLogin from "./components/pages/auth/FormLogin";
 import {PersistGate} from "redux-persist/integration/react" 
+import Posts from "./components/pages/posts/Posts";
+
 
 
 
@@ -28,6 +30,7 @@ const App = () => {
           <Route path="/mercedes" component={Mercedes} />
           <Route path="/sign-up" component={FormSignUp} />
           <Route path="/log-in" component={FormLogin} />
+          <Route path="/posts" component={Posts} />
         </Switch>
         <Footer />
         </PersistGate>

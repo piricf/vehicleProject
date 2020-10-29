@@ -121,10 +121,10 @@ const FormSignUp = () => {
           {error ? <p className="error">{error}</p> : null}
           <button className="form-input-btn" type="submit">
             Sign up
-          </button>
+          </button>        
           <span className="form-input-login">
             Already have an account? Login{" "}
-            <Link to="/log-in">
+            <Link to="/log-in" > 
               <span>here</span>
             </Link>
           </span>

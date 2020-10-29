@@ -34,6 +34,7 @@
   font-size: 20px;
   margin-left: 24px;
   margin-right: 24px;
+  width: 70%;
 }
 
 .footer-links {
@@ -119,7 +120,7 @@ small {
 
 @media screen and (max-width: 820px) {
   .footer-links {
-    padding-top: 2rem;
+    padding-top: 20px;
   }
   .footer-link-wrapper {
     flex-direction: column;

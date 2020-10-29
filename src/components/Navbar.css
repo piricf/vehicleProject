@@ -125,6 +125,7 @@
 
   .nav-item {
     width: 100%;
+    margin: 10px;
   }
 
   .navbar-logo {

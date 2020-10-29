@@ -1,8 +1,8 @@
-// import * as firebase from "firebase/app";
+import * as firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
 import "firebase/storage";
-import "firebase/database"
+import "firebase/database";
 
 export const firebaseConfig = {
   apiKey: "AIzaSyAYxpRmNZirNG_EsQzTYFwUi4KjhVrIH2Q",
@@ -15,13 +15,11 @@ export const firebaseConfig = {
   measurementId: "G-E6GXR3EWR6",
 };
 
+firebase.initializeApp(firebaseConfig);
 
+const firebaseWithConfig = !firebase.apps.length
+  ? firebase.initializeApp(firebaseConfig)
+  : firebase.app();
 
-// class Firebase {
-//   constructor() {
-//     firebase.initializeApp(firebaseConfig);
-//   }
-// }
-//  export default new Firebase();
-
-
+export const FirebaseAuth = firebaseWithConfig.auth();
+export const FirebaseDatabase = firebaseWithConfig.firestore();
