@@ -2,12 +2,15 @@ import React, { useState } from "react";
 import "./Posts.css";
 import { useDispatch } from "react-redux";
 import { createPost } from "../../../redux/posts/postActions";
+import { Redirect } from "react-router-dom";
 
 const PostModal = () => {
   const dispatch = useDispatch();
   const [content, setContent] = useState("");
   const [title, setTitle] = useState("");
   const [cover, setCover] = useState("");
+  const [redirect, setRedirect] = useState("")
+
 
   
 
@@ -19,7 +22,13 @@ const PostModal = () => {
       cover: cover[0],
     };
     dispatch(createPost(post));
+    setRedirect(true)
   };
+
+  const redirectTo = redirect
+  if(redirectTo) {
+    return <Redirect to="/posts" />
+  }
 
   // const test = () => {
   //   firebase.firestore().collection("cities").doc("LA").set({

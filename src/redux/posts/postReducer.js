@@ -1,16 +1,23 @@
-const INITIAL_STATE = 
-  {
-    posts: {},
-    error: undefined
-  }
-
+const INITIAL_STATE = {
+  posts: {},
+  error: undefined,
+};
 
 export const postReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
+    //action for create post
     case "CREATE_POST":
       return {
         ...state,
-        post: action.payload
+        posts: action.payload,
+        error: undefined
+      };
+    //action for get all posts
+    case "GET_POSTS":
+      return {
+        ...state,
+        posts: action.payload,
+        error: undefined
       };
     case "ERROR":
       return {
