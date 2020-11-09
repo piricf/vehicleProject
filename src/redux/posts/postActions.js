@@ -10,27 +10,26 @@ export const createPost = (post) => {
   return (dispatch) => {
     FirebaseDatabase.collection("posts")
       .add(newPost)
-      .then((posts) => dispatch({ type: "CREATE_POST", payload: posts }))
+      .then(() => dispatch({ type: "CREATE_POST", payload: newPost }))
       .catch((error) => dispatch({ type: "ERROR", payload: error }));
   };
 };
 
 //2.getAllPosts
 export const getAllPosts = () => {
-  let postArr = []
+  let allPosts = []
   return (dispatch) => {
     FirebaseDatabase
       .collection("posts")
       .get() 
       .then(snapshot => {
-        snapshot.forEach(doc => {
-          const data = doc.data()
-          console.log("Hello from postAction: ", data)
-          postArr.push(data)
-        })
+       allPosts = snapshot.docs.map(doc => ({
+          id: doc.id,
+          ...doc.data() 
+        }))
+        dispatch({type: "GET_POSTS", payload: allPosts})
       })
-      .then((posts) => dispatch({ type: "GET_POSTS", payload: posts }))
-      .catch((error) => dispatch({ type: "ERROR", payload: error }));
+      .catch((error) => dispatch({ type: "ERROR", payload: error.message }));
   };
   // let postArray = []
   // return (dispatch) => {

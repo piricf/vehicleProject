@@ -1,5 +1,5 @@
 const INITIAL_STATE = {
-  posts: {},
+  posts: [],
   error: undefined,
 };
 
@@ -9,15 +9,15 @@ export const postReducer = (state = INITIAL_STATE, action) => {
     case "CREATE_POST":
       return {
         ...state,
-        posts: action.payload,
-        error: undefined
+        posts: [...state.posts, action.payload],
+        error: undefined,
       };
     //action for get all posts
     case "GET_POSTS":
       return {
         ...state,
         posts: action.payload,
-        error: undefined
+        error: undefined,
       };
     case "ERROR":
       return {
