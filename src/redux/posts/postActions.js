@@ -31,43 +31,17 @@ export const getAllPosts = () => {
       })
       .catch((error) => dispatch({ type: "ERROR", payload: error.message }));
   };
-  // let postArray = []
-  // return (dispatch) => {
-  //   FirebaseDatabase
-  //   .collection("posts")
-  //   .get()
-  //   .then((post) =>
-  //    post.forEach(doc => {
-  //     postArray.push({id: doc.id, data: doc.data()})
-  //   }))
-  //   .then((post) => dispatch({type: "GET_POSTS", payload: post}))
-  //   .catch((error) => dispatch({type: "ERROR", payload: error}))
-  // }
-
-  // return (dispatch) => {
-  //   FirebaseDatabase.collection("posts")
-  //     .get()
-  //     .then((snapshot) => {
-  //       const postArr = [];
-  //       snapshot.forEach((doc) => {
-  //         const data = doc.data();
-  //         postArr.push(data);
-  //       });
-  //     })
-  //     .then((posts) => {
-  //       dispatch({ type: "GET_POSTS", payload: posts });
-  //     })
-  //     .catch((error) => {
-  //       dispatch({ type: "ERROR", payload: error });
-  //     });
-  // };
-  // .then(response => {
-  //   const allPosts = response.docs.forEach(doc => {
-  //     if(doc.exists){
-  //       allPosts.push({id: doc.id, data: doc.data()})
-  //     }
-  //   })
-  //   dispatch({type: "GET_POSTS"}, allPosts)
-  // })
 };
+
 //3.removePosts
+export const deletePosts = (postid) => {
+  
+  return (dispatch) => {
+    FirebaseDatabase
+    .collection("posts")
+    .doc(postid)
+    .delete()
+    .then(() => dispatch({type: "DELETE_POSTS"}))
+    .catch((error) => dispatch({type: "ERROR", payload: error.message}))
+  }
+}

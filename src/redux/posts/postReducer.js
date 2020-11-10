@@ -19,6 +19,13 @@ export const postReducer = (state = INITIAL_STATE, action) => {
         posts: action.payload,
         error: undefined,
       };
+    //delete post
+    case "DELETE_POST":
+      return {
+        ...state,
+        posts: action.payload,
+        error: undefined,
+      }  
     case "ERROR":
       return {
         ...state,

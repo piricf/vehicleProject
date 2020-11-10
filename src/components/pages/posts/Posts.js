@@ -3,7 +3,7 @@ import PostModal from "./PostModal";
 import { HiPlus } from "react-icons/hi";
 import { useDispatch, useSelector } from "react-redux";
 import PostCard from "./PostCard";
-import { getAllPosts } from "../../../redux/posts/postActions";
+import { deletePosts, getAllPosts } from "../../../redux/posts/postActions";
 
 const Posts = () => {
   const dispatch = useDispatch();
@@ -15,13 +15,18 @@ const Posts = () => {
 
   const posts = useSelector((state) => state.postReducer.posts);
 
+
+ 
+
   useEffect(() => {
     dispatch(getAllPosts());
   }, [dispatch]);
   
-  const onDeleteCallback = (id) => {
-    console.log(id)
+  const deletePost = (id) => {
+    dispatch(deletePosts(id))
   }
+
+ 
 
   return (
     <div className="post-wrapper">
@@ -35,7 +40,7 @@ const Posts = () => {
         key={i}
         title={post.title}
         content={post.content}
-        onDeleteCallback={onDeleteCallback}
+        deletePost={deletePost}
         id={post.id}
         // date={post.date}
         />
