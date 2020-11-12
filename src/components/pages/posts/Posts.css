@@ -1,14 +1,21 @@
 /*posts*/
 .post__show-modal-btn {
-  position: fixed;
-  right: 105px;
-  bottom: 1015px;
   font-size: 40px;
+  position: fixed;
+  left: 70px;
+  top: 160px;
+  cursor: pointer;
 }
 .post__show-modal-btn:hover {
   transition: all 0.5s ease-out;
   transform: scale(1.1);
 }
+@media screen and (max-width: 701px) {
+  .post__show-modal-btn{
+  left: 10px; 
+}
+}
+
 /*post card*/
 .post__card-container {
   display: flex;
@@ -21,10 +28,9 @@
   padding: 34px 32px 14px 16px;
   background: linear-gradient(
     90deg,
-    rgb(127, 68, 145) 0%,
+    rgb(189, 169, 224) 0%,
     rgba(100, 115, 255, 1) 100%
   );
- 
 }
 
 .col {
@@ -64,12 +70,17 @@
   background: none;
   font-size: 23px;
   margin-top: 15px;
+  cursor: pointer;
+}
+.delete-icon:hover{
+  transition: all 0.5s ease-out;
+  transform: scale(1.1);
 }
 
 @media screen and (max-width: 701px) {
   .post__card-container {
     margin-left: 55px;
-    margin-left: 55px;
+    margin-right: 55px;
   }
 }
 
@@ -94,7 +105,6 @@
   z-index: 1;
   opacity: 0.9;
 }
-
 
 .post-modal_heading {
   margin: 42px 0;
@@ -143,3 +153,10 @@
   margin-bottom: 55px;
 }
 
+@media screen and (max-width: 701px) {
+  .post-modal {
+    width: 350px;
+    left: 2px;
+    right: 2px;
+  }
+}

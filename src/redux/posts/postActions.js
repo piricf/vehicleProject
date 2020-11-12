@@ -5,7 +5,7 @@ export const createPost = (post) => {
   let newPost = {
     title: post.title,
     content: post.content,  
-    date: new Date().toDateString() ,
+    date: new Date().toDateString(),
   };
   return (dispatch) => {
     FirebaseDatabase.collection("posts")
