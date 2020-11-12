@@ -5,7 +5,7 @@ export const createPost = (post) => {
   let newPost = {
     title: post.title,
     content: post.content,  
-    date: new Date(),
+    date: new Date().toDateString() ,
   };
   return (dispatch) => {
     FirebaseDatabase.collection("posts")
@@ -25,7 +25,7 @@ export const getAllPosts = () => {
       .then(snapshot => {
        allPosts = snapshot.docs.map(doc => ({
           id: doc.id,
-          ...doc.data() 
+          ...doc.data()
         }))
         dispatch({type: "GET_POSTS", payload: allPosts})
       })

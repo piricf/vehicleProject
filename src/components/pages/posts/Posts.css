@@ -1,21 +1,33 @@
+/*posts*/
+.post__show-modal-btn {
+  position: fixed;
+  right: 105px;
+  bottom: 1015px;
+  font-size: 40px;
+}
+.post__show-modal-btn:hover {
+  transition: all 0.5s ease-out;
+  transform: scale(1.1);
+}
 /*post card*/
-.post__card-container{
+.post__card-container {
   display: flex;
   justify-content: center;
-  /* background: #1c2237; */
   margin: 150px auto;
   margin-left: 160px;
   margin-right: 160px;
   border-radius: 10px;
+  min-width: 280px;
   padding: 34px 32px 14px 16px;
   background: linear-gradient(
     90deg,
     rgb(127, 68, 145) 0%,
     rgba(100, 115, 255, 1) 100%
   );
+ 
 }
 
-.col{
+.col {
   display: table;
   padding-bottom: 15px;
   margin-right: auto;
@@ -23,27 +35,42 @@
   position: sticky;
 }
 
-.post__card-title{
+.post__card-title {
   display: flex;
   justify-content: flex-start;
   margin-bottom: 12px;
   font-size: 35px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
-.post__card-content{
+.post__card-content {
   display: flex;
   justify-content: flex-start;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
   font-size: 20px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  opacity: 0.8;
+  margin-right: 45px;
+  margin-left: 15px;
 }
 
-.delete-icon{
+.post__card-date {
+  font-size: 15px;
+  color: #1a223e;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.delete-icon {
   background: none;
   font-size: 23px;
-  position: absolute;
-  left: 140%;
-  bottom: 90%;
+  margin-top: 15px;
+}
+
+@media screen and (max-width: 701px) {
+  .post__card-container {
+    margin-left: 55px;
+    margin-left: 55px;
+  }
 }
 
 /*post-modal*/
@@ -53,13 +80,21 @@
   justify-content: flex-start;
   width: 620px;
   min-height: 600px;
-  background: #1c2237;
+  background-color: #0c1740;
   text-align: center;
   margin: 128px auto;
   border-radius: 10px;
-  padding-bottom: 32px;
+  padding-bottom: 5px;
+  position: absolute; /*tuuuu sam !!!!!!! */
+  position: fixed;
+  left: 85px;
+  right: 85px;
+  top: 25px;
+  transition: all 0.5s ease;
+  z-index: 1;
   opacity: 0.9;
 }
+
 
 .post-modal_heading {
   margin: 42px 0;
@@ -107,3 +142,4 @@
   height: 120px;
   margin-bottom: 55px;
 }
+

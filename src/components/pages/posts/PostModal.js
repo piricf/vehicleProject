@@ -10,6 +10,7 @@ const PostModal = () => {
   const [content, setContent] = useState("");
   const [title, setTitle] = useState("");
   const [redirect, setRedirect] = useState("");
+ 
 
   const createPostSubmit = (e) => {
     e.preventDefault();
@@ -28,12 +29,10 @@ const PostModal = () => {
 
   return (
     <div className="post-modal">
-      
-      <div className="post-modal-menu active"> 
+      <div className="post-modal-menu"> 
       <h1 className="post-modal_heading">Write your own post!</h1>
       <form onSubmit={createPostSubmit}>
         <div className="post-modal-item">
-          {/* <label htmlFor="title">Post title:</label> */}
           <input
             type="text"
             placeholder="Add Post title!"
@@ -42,7 +41,6 @@ const PostModal = () => {
           />
         </div>
         <div className="post-modal-item">
-          {/* <label htmlFor="content">Post Content:</label> */}
           <textarea
             name="content"
             className="text-area"

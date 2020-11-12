@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import PostModal from "./PostModal";
-import { HiPlus } from "react-icons/hi";
+import { FcAddDatabase } from "react-icons/fc";
 import { useDispatch, useSelector } from "react-redux";
 import PostCard from "./PostCard";
 import { deletePosts, getAllPosts } from "../../../redux/posts/postActions";
+
 
 const Posts = () => {
   const dispatch = useDispatch();
@@ -14,8 +15,7 @@ const Posts = () => {
   };
 
   const posts = useSelector((state) => state.postReducer.posts);
-
-
+ 
  
 
   useEffect(() => {
@@ -30,8 +30,8 @@ const Posts = () => {
 
   return (
     <div className="post-wrapper">
-      <button onClick={() => handlePostModal()}>
-        <HiPlus />
+      <button className="post__show-modal-btn" onClick={() => handlePostModal()}>
+        <FcAddDatabase />
       </button>
       <div>{showPostModal ? <PostModal /> : null}</div>
       <div> 
@@ -42,11 +42,10 @@ const Posts = () => {
         content={post.content}
         deletePost={deletePost}
         id={post.id}
-        // date={post.date}
+        date={post.date}
         />
       ))}
       </div>
-     
     </div>
   );
 };
