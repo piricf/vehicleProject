@@ -11,6 +11,7 @@ const PostCard = ({ title, content, deletePost, id, date}) => {
     setRedirect(true);
   };
 
+ 
   
 
   const redirectTo = redirect;

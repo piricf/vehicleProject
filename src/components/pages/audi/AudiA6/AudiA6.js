@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "../../../Button";
-import "./AudiA6.css";
+// import "./AudiA6.css";
+import "../../VehicleModels.css"
 
 const imagesPath = {
   white:
@@ -13,11 +14,11 @@ const AudiA6 = ({ toggleImageA6, changeA6 }) => {
 
   return (
     <div className="container">
-      <div className="row audi__a6-row">
+      <div className="row vehicle-row">
         <div className="column">
-          <div className="audi__a6-text-wrapper">
+          <div className="vehicle-text-wrapper">
             <h3>More about Audi A6</h3>
-            <p className="audi__a6-text-info">
+            <p className="vehicle-text-info">
               The Audi A6 is an executive car made by the German automaker Audi.
               Now in its fifth generation, the successor to the Audi 100 is
               manufactured in Neckarsulm, Germany, and is available in saloon
@@ -32,10 +33,10 @@ const AudiA6 = ({ toggleImageA6, changeA6 }) => {
           </Button>
         </div>
         <div className="column">
-          <div className="audi__a6-img-wrapper">
+          <div className="vehicle-img-wrapper">
             <img
               src={changeA6 ? white : grey}
-              className="audi__img"
+              className="vehicle__img"
               alt="ImageName"
             />
           </div>

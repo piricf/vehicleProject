@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "../../../Button";
-import "./Bmw7.css";
+// import "./Bmw7.css";
+import "../../VehicleModels.css"
 
 const imagesPath = {
   metalic:
@@ -14,11 +15,11 @@ const Bmw7 = ({ toogleImageBmw7, changeBmw7 }) => {
 
   return (
     <div className="container">
-      <div className="row bmw7__series7-row">
+      <div className="row vehicle-row">
         <div className="column">
-          <div className="bmw7__series7-text-wrapper">
+          <div className="vehicle-text-wrapper">
             <h3>More about BMW Series 7</h3>
-            <p className="bmw7__series7-text-info">
+            <p className="vehicle-text-info">
               There may be a bigger BMW now and one with a higher model number,
               but the 2020 BMW 7 Series still reigns supreme over its brand
               mates as the long-running flagship sedan. Nearly every
@@ -32,10 +33,10 @@ const Bmw7 = ({ toogleImageBmw7, changeBmw7 }) => {
           </Button>
         </div>
         <div className="column">
-          <div className="bmw7__series7-img-wrapper">
+          <div className="vehicle-img-wrapper">
             <img
               src={changeBmw7 ? metalic : black}
-              className="bmw7__img"
+              className="vehicle__img"
               alt="ImageName"
             />
           </div>

@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "../../../Button";
-import "./AudiA5.css";
+// import "./AudiA5.css";
+import "../../VehicleModels.css"
 
 const imagesPath = {
   green:
@@ -14,11 +15,11 @@ const AudiA5 = ({ toggleImageA5, changeA5 }) => {
 
   return (
     <div className="container">
-      <div className="row audi__a5-row">
+      <div className="row vehicle-row">
         <div className="column">
-          <div className="audi__a5-text-wrapper">
+          <div className="vehicle-text-wrapper">
             <h3>More about Audi A5</h3>
-            <p className="audi__a5-text-info">
+            <p className="vehicle-text-info">
               he Audi A5 offers impressive elegance, advanced technology and
               exhilarating driving dynamics. Experience sporty, elegant driving
               in the A5 Coupé and the A5 Sportback, an emotional tour in the A5
@@ -31,10 +32,10 @@ const AudiA5 = ({ toggleImageA5, changeA5 }) => {
           </Button>
         </div>
         <div className="column">
-          <div className="audi__a5-img-wrapper">
+          <div className="vehicle-img-wrapper">
             <img
               src={changeA5 ? green : metalic}
-              className="audi__img"
+              className="vehicle__img"
               alt="ImageName"
             />
           </div>

@@ -25,7 +25,14 @@ export const postReducer = (state = INITIAL_STATE, action) => {
         ...state,
         posts: action.payload,
         error: undefined,
-      }  
+      }
+    //update post
+    // case "UPDATE_POST":
+    //   return {
+    //     ...state,
+    //     posts: action.payload,
+    //     error: undefined,
+    //   }    
     case "ERROR":
       return {
         ...state,

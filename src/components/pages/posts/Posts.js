@@ -16,6 +16,7 @@ const Posts = () => {
 
   const posts = useSelector((state) => state.postReducer.posts);
  
+  
  
 
   useEffect(() => {
@@ -31,7 +32,7 @@ const Posts = () => {
   return (
     <div className="post-wrapper">
       <button className="post__show-modal-btn" onClick={() => handlePostModal()}>
-        <FcAddDatabase />
+        <FcAddDatabase /> 
       </button>
       <div>{showPostModal ? <PostModal /> : null}</div>
       <div> 

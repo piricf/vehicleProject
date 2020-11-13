@@ -1,5 +1,6 @@
 import React from "react";
-import "./AudiA3.css";
+// import "./AudiA3.css";
+import "../../VehicleModels.css"
 import Button from "../../../Button";
 
 const imagesPath = {
@@ -14,11 +15,11 @@ export const AudiA3 = ({ toggleImageA3, changeA3 }) => {
 
   return (
     <div className="container">
-      <div className="row audi__a3-row">
+      <div className="row vehicle-row">
         <div className="column"> 
-          <div className="audi__a3-text-wrapper">
+          <div className="vehicle-text-wrapper">
           <h3>More about Audi A3</h3>
-          <p className="audi__a3-text-info">
+          <p className="vehicle-text-info">
             Where once there was “Dear Mr. Smith” now there is “Alexa”, where
             once we had DVD rentals now we have streaming platforms – our world
             is changing ever more rapidly. The Audi A3 is the perfect companion
@@ -33,8 +34,8 @@ export const AudiA3 = ({ toggleImageA3, changeA3 }) => {
         
         </div>
         <div className="column"> 
-        <div className="audi__a3-img-wrapper"> 
-        <img src={changeA3 ? red : blue} className="audi__img" alt="ImageName" />  
+        <div className="vehicle-img-wrapper"> 
+        <img src={changeA3 ? red : blue} className="vehicle__img" alt="ImageName" />  
         </div>
         </div>
       </div>

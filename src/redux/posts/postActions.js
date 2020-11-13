@@ -35,7 +35,6 @@ export const getAllPosts = () => {
 
 //3.removePosts
 export const deletePosts = (postid) => {
-  
   return (dispatch) => {
     FirebaseDatabase
     .collection("posts")
@@ -45,3 +44,22 @@ export const deletePosts = (postid) => {
     .catch((error) => dispatch({type: "ERROR", payload: error.message}))
   }
 }
+
+//4.updatePost
+// export const updatePost = (postId, postData) => {
+//   let updatePost = {
+//     title: postData.title,
+//     content: postData.title,
+//     date: new Date(postData.date).toDateString()
+//   }
+//   return (dispatch) => {
+//     FirebaseDatabase
+//     .collection("posts")
+//     .doc(postId)
+//     .set(
+//       updatePost, 
+//     {merge: true})
+//     .then(() => dispatch({type: "UPDATE_POST", payload: updatePost}))
+//     .catch((error) => dispatch({type: "ERROR", payload: error}))
+//   }
+// }

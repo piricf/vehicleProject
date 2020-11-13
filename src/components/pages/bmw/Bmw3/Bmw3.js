@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "../../../Button";
-import "./Bmw3.css";
+// import "./Bmw3.css";
+import "../../VehicleModels.css"
 
 const imagesPath = {
   red:
@@ -13,11 +14,11 @@ const Bmw3 = ({ toogleImageBmw3, changeBmw3 }) => {
 
   return (
     <div className="container">
-      <div className="row bmw3__series3-row">
+      <div className="row vehicle-row">
         <div className="column">
-          <div className="bmw3__series3-text-wrapper">
+          <div className="vehicle-text-wrapper">
             <h3>More about BMW Series 3</h3>
-            <p className="bmw3__series3-text-info">
+            <p className="vehicle-text-info">
               The BMW 3 Series is a compact executive car manufactured by the
               German automaker BMW since May 1975. It is the successor to the 02
               Series and has been produced in seven different generations. The
@@ -25,9 +26,7 @@ const Bmw3 = ({ toogleImageBmw3, changeBmw3 }) => {
               sedan (saloon), however the model range has since expanded to
               include a 4-door sedan, 2-door convertible, 2-door coupé, 5-door
               station wagon, 5-door liftback ("Gran Turismo") and 3-door
-              hatchback body styles. Since 2013, the coupé and convertible
-              models have been marketed as the 4 Series, therefore the 3 Series
-              range no longer includes these body styles.
+              hatchback body styles. 
             </p>
           </div>
           <Button onClick={toogleImageBmw3} buttonSize="btn-medium">
@@ -35,10 +34,10 @@ const Bmw3 = ({ toogleImageBmw3, changeBmw3 }) => {
           </Button>
         </div>
         <div className="column">
-          <div className="bmw3__series3-img-wrapper">
+          <div className="vehicle-img-wrapper">
             <img
               src={changeBmw3 ? red : blue}
-              className="bmw3__img"
+              className="vehicle__img"
               alt="ImageName"
             />
           </div>

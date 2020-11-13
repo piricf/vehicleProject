@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "../../../Button";
-import "./Bmw5.css";
+// import "./Bmw5.css";
+import "../../VehicleModels.css"
 
 const imagesPath = {
   blue: "https://i.ytimg.com/vi/Jzi_NYZcNS4/maxresdefault.jpg",
@@ -13,11 +14,11 @@ const Bmw5 = ({ toogleImageBmw5, changeBmw5 }) => {
 
   return (
     <div className="container">
-      <div className="row bmw5__series5-row">
+      <div className="row vehicle-row">
         <div className="column">
-          <div className="bmw5__series5-text-wrapper">
+          <div className="vehicle-text-wrapper">
             <h3>More about BMW Series 5</h3>
-            <p className="bmw5__series5-text-info">
+            <p className="vehicle-text-info">
               The new BMW 5 Series, which is like saying the new VW Golf or the
               new Mini. Even though it has almost all new parts, we all know
               exactly what it’s going to be: a fine-driving, well-built, refined
@@ -33,10 +34,10 @@ const Bmw5 = ({ toogleImageBmw5, changeBmw5 }) => {
           </Button>
         </div>
         <div className="column">
-          <div className="bmw5__series5-img-wrapper">
+          <div className="vehicle-img-wrapper">
             <img
               src={changeBmw5 ? blue : white}
-              className="bmw5__img"
+              className="vehicle__img"
               alt="ImageName"
             />
           </div>

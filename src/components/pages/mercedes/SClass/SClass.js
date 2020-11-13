@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "../../../Button";
-import "./SClass.css"
+// import "./SClass.css"
+import "../../VehicleModels.css"
 
 const imagesPath = {
   black:
@@ -13,11 +14,11 @@ const SClass = ({toogleImageS, changeS}) => {
   const { black, white } = imagesPath;
   return (
     <div className="container">
-      <div className="row mercedesS__sClass-row">
+      <div className="row vehicle-row">
         <div className="column">
-          <div className="mercedesS__sClass-text-wrapper">
+          <div className="vehicle-text-wrapper">
             <h3>More about Mercedes S-Class</h3>
-            <p className="mercedesS__sClass-text-info">
+            <p className="vehicle-text-info">
               oasting spectacular levels of luxury and state-of-the-art
               technology, the 2021 Mercedes-Benz S-class sedan is the German
               company's flagship and a rolling statement of success. Although
@@ -33,8 +34,8 @@ const SClass = ({toogleImageS, changeS}) => {
           </Button>
         </div>
         <div className="column">
-            <div className="mercedesS__sClass-img-wrapper">
-                <img src={changeS ? black : white} className="mercedesS__img" alt="ImageName" />
+            <div className="vehicle-img-wrapper">
+                <img src={changeS ? black : white} className="vehicle__img" alt="ImageName" />
             </div>
         </div>
       </div>

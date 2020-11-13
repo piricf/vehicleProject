@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "../../../Button";
-import "./AClass.css";
+// import "./AClass.css";
+import "../../VehicleModels.css"
 
 const imagesPath = {
   metalic:
@@ -13,11 +14,11 @@ const AClass = ({toogleImageAClass, changeAClass}) => {
   const { metalic, red } = imagesPath;
   return (
     <div className="container">
-      <div className="row mercedesA__aClass-row">
+      <div className="row vehicle-row">
         <div className="column">
-          <div className="mercedesA__aClass-text-wrapper">
+          <div className="vehicle-text-wrapper">
             <h3>More about Mercedes A-Class</h3>
-            <p className="mercedesA__aClass-text-info">
+            <p className="vehicle-text-info">
               Entry-level models provide shoppers with an affordably priced way
               into a luxury carmaker's lineup, and the A-class fills this role
               in the Mercedes-Benz product range. This subcompact sedan is the
@@ -32,8 +33,8 @@ const AClass = ({toogleImageAClass, changeAClass}) => {
           </Button>
         </div>
         <div className="column">
-            <div className="mercedesA__aClass-img-wrapper">
-                <img src={changeAClass ? metalic : red} className="mercedesA__img" alt="ImageName" />
+            <div className="vehicle-img-wrapper">
+                <img src={changeAClass ? metalic : red} className="vehicle__img" alt="ImageName" />
             </div>
         </div>
       </div>

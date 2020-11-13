@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "../../../Button";
-import "./ClsClass.css";
+// import "./ClsClass.css";
+import "../../VehicleModels.css"
 
 const imagesPath = {
   grey:
@@ -12,11 +13,11 @@ const ClsClass = ({ toogleImageCls, changeCls }) => {
   const { grey, black } = imagesPath;
   return (
     <div className="container">
-      <div className="row mercedesCls__cls-row">
+      <div className="row vehicle-row">
         <div className="column">
-          <div className="mercedesCls__cls-text-wrapper">
+          <div className="vehicle-text-wrapper">
             <h3>More about Mercedes CLS-Class</h3>
-            <p className="mercedesCls__cls-text-info">
+            <p className="vehicle-text-info">
               Mercedes has never knowingly left a niche unplugged (how else
               would you explain the G-Wagen Landaulet?). It was with the
               first-generation CLS that Mercedes claims to have pioneered the
@@ -31,10 +32,10 @@ const ClsClass = ({ toogleImageCls, changeCls }) => {
           </Button>
         </div>
         <div className="column">
-          <div className="mercedesCls__cls-img-wrapper">
+          <div className="vehicle-img-wrapper">
             <img
               src={changeCls ? grey : black}
-              className="mercedesCls__img"
+              className="vehicle__img"
               alt="ImageName"
             />
           </div>
