@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import MercedesLogo from "../../../assets/Mercedes.jpg";
+import MercedesLogo from "./Images/Mercedes.jpg";
 import useSlider from "../../../hooks/useSlider";
 import Button from "../../Button";
 import ImageSliderMercedes from "./ImageSliderMercedes";

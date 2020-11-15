@@ -24,7 +24,7 @@ export const getAllPosts = () => {
       .get() 
       .then(snapshot => {
        allPosts = snapshot.docs.map(doc => ({
-          id: doc.id,
+          id: doc.id, 
           ...doc.data()
         }))
         dispatch({type: "GET_POSTS", payload: allPosts})
@@ -34,13 +34,13 @@ export const getAllPosts = () => {
 };
 
 //3.removePosts
-export const deletePosts = (postid) => {
+export const deletePosts = (postId) => {
   return (dispatch) => {
     FirebaseDatabase
     .collection("posts")
-    .doc(postid)
+    .doc(postId)
     .delete()
-    .then(() => dispatch({type: "DELETE_POSTS"}))
+    .then(() => dispatch({type: "DELETE_POSTS" }))
     .catch((error) => dispatch({type: "ERROR", payload: error.message}))
   }
 }
