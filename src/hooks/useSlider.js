@@ -1,4 +1,4 @@
-import { useState } from "react"; //Custom hook -> samo logika koji radim ako tu istu logiku zelim reuse-at.
+import { useState } from "react"; 
 
 const useSlider = (sliderArr) => {
   const [x, setX] = useState(0);

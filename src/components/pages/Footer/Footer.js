@@ -25,8 +25,8 @@ const Footer = () => {
           <div className="footer-link-items">
             <h2>Contact us</h2>
             <Link to="/sign-in">Sign in</Link>
-            <Link to="/sign-in">Support</Link>
-            <Link to="/sign-up">How it works</Link>
+            <Link to="/log-in">Log In</Link>
+            <Link to="/sign-up">Create account and add your comment</Link>
           </div>
           <div className="footer-link-items">
             <h2>Social Media</h2>

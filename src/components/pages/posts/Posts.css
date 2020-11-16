@@ -1,9 +1,9 @@
 /*posts*/
 .post__show-modal-btn {
   font-size: 40px;
-  position: fixed;
+  position: sticky;
   left: 70px;
-  top: 160px;
+  top: 120px;
   cursor: pointer;
 }
 .post__show-modal-btn:hover {
@@ -11,9 +11,9 @@
   transform: scale(1.1);
 }
 @media screen and (max-width: 701px) {
-  .post__show-modal-btn{
-  left: 10px; 
-}
+  .post__show-modal-btn {
+    left: 10px;
+  }
 }
 
 /*post card*/
@@ -72,7 +72,7 @@
   margin-top: 15px;
   cursor: pointer;
 }
-.delete-icon:hover{
+.delete-icon:hover {
   transition: all 0.5s ease-out;
   transform: scale(1.1);
 }
@@ -90,13 +90,12 @@
   flex-direction: column;
   justify-content: flex-start;
   width: 620px;
-  min-height: 600px;
+  height: 550px;
   background-color: #0c1740;
   text-align: center;
   margin: 128px auto;
   border-radius: 10px;
   padding-bottom: 5px;
-  position: absolute; 
   position: fixed;
   left: 85px;
   right: 85px;
@@ -105,6 +104,8 @@
   z-index: 1;
   opacity: 0.9;
 }
+
+
 
 .post-modal_heading {
   margin: 42px 0;
@@ -161,3 +162,4 @@
     top: 105px;
   }
 }
+
