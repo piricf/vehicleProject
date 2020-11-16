@@ -1,49 +1,49 @@
 import { FirebaseDatabase } from "../../firebase/Config";
 
-//1.addPosts
 export const createPost = (post) => {
   let newPost = {
     title: post.title,
-    content: post.content,  
+    content: post.content,
     date: new Date().toDateString(),
   };
   return (dispatch) => {
     FirebaseDatabase.collection("posts")
       .add(newPost)
-      .then(() => dispatch({ type: "CREATE_POST", payload: newPost }))
+      .then((postRef) => { 
+      newPost.id = postRef.id
+      dispatch({ type: "CREATE_POST", payload: newPost })})
       .catch((error) => dispatch({ type: "ERROR", payload: error }));
   };
 };
 
-//2.getAllPosts
 export const getAllPosts = () => {
-  let allPosts = []
+  let allPosts = [];
   return (dispatch) => {
-    FirebaseDatabase
-      .collection("posts")
-      .get() 
-      .then(snapshot => {
-       allPosts = snapshot.docs.map(doc => ({
-          id: doc.id, 
-          ...doc.data()
-        }))
-        dispatch({type: "GET_POSTS", payload: allPosts})
+    FirebaseDatabase.collection("posts")
+      .get()
+      .then((snapshot) => {
+        allPosts = snapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        dispatch({ type: "GET_POSTS", payload: allPosts });
       })
       .catch((error) => dispatch({ type: "ERROR", payload: error.message }));
   };
 };
 
-//3.removePosts
-export const deletePosts = (postId) => {
+export const deletePosts = (id, onDeleteSuccess) => {
   return (dispatch) => {
-    FirebaseDatabase
-    .collection("posts")
-    .doc(postId)
-    .delete()
-    .then(() => dispatch({type: "DELETE_POSTS" }))
-    .catch((error) => dispatch({type: "ERROR", payload: error.message}))
-  }
-}
+    FirebaseDatabase.collection("posts")
+      .doc(id)
+      .delete()
+      .then(() => {
+        dispatch({ type: "DELETE_POSTS" });
+        onDeleteSuccess();
+      })
+      .catch((error) => dispatch({ type: "ERROR", payload: error.message }));
+  };
+};
 
 //4.updatePost
 // export const updatePost = (postId, postData) => {
@@ -57,7 +57,7 @@ export const deletePosts = (postId) => {
 //     .collection("posts")
 //     .doc(postId)
 //     .set(
-//       updatePost, 
+//       updatePost,
 //     {merge: true})
 //     .then(() => dispatch({type: "UPDATE_POST", payload: updatePost}))
 //     .catch((error) => dispatch({type: "ERROR", payload: error}))

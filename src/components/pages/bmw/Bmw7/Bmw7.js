@@ -1,6 +1,5 @@
 import React from "react";
 import Button from "../../../Button";
-// import "./Bmw7.css";
 import "../../VehicleModels.css"
 
 const imagesPath = {

@@ -5,28 +5,26 @@ const INITIAL_STATE = {
 
 export const postReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    //action for create post
+    
     case "CREATE_POST":
       return {
         ...state,
         posts: [...state.posts, action.payload],
         error: undefined,
       };
-    //action for get all posts
+    
     case "GET_POSTS":
       return {
         ...state,
         posts: action.payload,
         error: undefined,
       };
-    //delete post
-    case "DELETE_POST":
+    
+    case "DELETE_POSTS":
       return {
         ...state,
-        posts: action.payload,
         error: undefined,
       }
-    //update post
     // case "UPDATE_POST":
     //   return {
     //     ...state,

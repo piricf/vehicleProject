@@ -1,18 +1,15 @@
-import React, { useState } from "react";
+import React, {useState } from "react";
 import { Redirect } from "react-router-dom";
 import { FaRegTrashAlt } from "react-icons/fa";
 import "./Posts.css";
 
-const PostCard = ({ title, content, deletePost, id, date}) => {
+const PostCard = ({ title, content, deletePost, id, date }) => {
   const [redirect, setRedirect] = useState("");
 
   const deletePostById = () => {
     deletePost(id);
     setRedirect(true);
   };
-
- 
-  
 
   const redirectTo = redirect;
   if (redirectTo) {
