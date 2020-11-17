@@ -27,6 +27,19 @@ const Posts = () => {
     dispatch(getAllPosts());
   };
 
+
+
+  useEffect(() => {
+    if(showPostModal){
+      document.body.style.overflow = "hidden"
+    } else {
+      document.body.style.overflow="unset"
+    }
+  }, [showPostModal])
+
+
+
+
   return (
     <div className="post-wrapper">
       <button
